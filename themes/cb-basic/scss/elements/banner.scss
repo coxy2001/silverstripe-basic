@@ -1,0 +1,15 @@
+.silverstripe__elementalbannerblock__block__bannerblock {
+    height: auto !important;
+}
+
+.banner_img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    min-height: 25vh;
+}
+
+.banner_content{
+    margin: 2rem 8rem;
+    color: $banner-color;
+}
