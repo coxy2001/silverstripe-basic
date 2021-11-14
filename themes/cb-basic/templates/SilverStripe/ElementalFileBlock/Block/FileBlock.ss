@@ -8,6 +8,6 @@
 
 <div class="row">
     <div class="col-12">
-        $File
+        <img width="100%" src="$File.URL" alt="$File.Title">
     </div>
 </div>

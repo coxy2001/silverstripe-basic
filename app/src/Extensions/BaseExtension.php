@@ -3,6 +3,7 @@
 namespace Coxy\Website\Extensions;
 
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Control\Controller;
@@ -14,7 +15,8 @@ class BaseExtension extends DataExtension
         'TextColour' => 'Enum(array("Inherit","Light","Dark"), "Inherit")',
         'SectionPadTop' => 'Enum(array("Small","Medium","Large","None"), "Medium")',
         'SectionPadBottom' => 'Enum(array("Same","Small","Medium","Large","None"), "Same")',
-        'ContainerWidth' => 'Enum(array("Contained","Full"), "Contained")'
+        'ContainerWidth' => 'Enum(array("Contained","Full"), "Contained")',
+        'BoxedItem' => 'Boolean'
     ];
 
     public function updateCMSFields(FieldList $fields)
@@ -56,6 +58,9 @@ class BaseExtension extends DataExtension
         );
         $containerWidth->setDescription('Set block width to contained or full');
 
+        $boxedItem = new CheckboxField('BoxedItem', 'Boxed Item?');
+        $boxedItem->setDescription('Add a box around this block to contain the background colour');
+
         $fields->addFieldsToTab(
             'Root.Settings',
             array(
@@ -63,7 +68,8 @@ class BaseExtension extends DataExtension
                 $textColour,
                 $sectionPaddingType,
                 $sectionPaddingBottom,
-                $containerWidth
+                $containerWidth,
+                $boxedItem
             )
         );
     }
