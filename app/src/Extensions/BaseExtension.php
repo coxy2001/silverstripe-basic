@@ -1,6 +1,6 @@
 <?php
 
-namespace Coxy\Elements\Extensions;
+namespace Coxy\Website\Extensions;
 
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\DropdownField;
@@ -13,7 +13,8 @@ class BaseExtension extends DataExtension
         'BackgroundColour' => 'Enum(array("None","Primary","Secondary"), "None")',
         'TextColour' => 'Enum(array("Inherit","Light","Dark"), "Inherit")',
         'SectionPadTop' => 'Enum(array("Small","Medium","Large","None"), "Medium")',
-        'SectionPadBottom' => 'Enum(array("Same","Small","Medium","Large","None"), "Same")'
+        'SectionPadBottom' => 'Enum(array("Same","Small","Medium","Large","None"), "Same")',
+        'ContainerWidth' => 'Enum(array("Contained","Full"), "Contained")'
     ];
 
     public function updateCMSFields(FieldList $fields)
@@ -48,13 +49,21 @@ class BaseExtension extends DataExtension
         );
         $sectionPaddingBottom->setDescription('Bottom padding of block');
 
+        $containerWidth = new DropdownField(
+            'ContainerWidth',
+            'Container Width',
+            $ownerSingleton->dbObject('ContainerWidth')->enumValues()
+        );
+        $containerWidth->setDescription('Set block width to contained or full');
+
         $fields->addFieldsToTab(
             'Root.Settings',
             array(
                 $backgroundColour,
                 $textColour,
                 $sectionPaddingType,
-                $sectionPaddingBottom
+                $sectionPaddingBottom,
+                $containerWidth
             )
         );
     }
@@ -99,12 +108,12 @@ class BaseExtension extends DataExtension
         } else {
             $class = 'pt-0';
         }
-        
+
         $padBot = $this->owner->SectionPadBottom;
         if ($padBot == 'Same') {
             $padBot = $padTop;
         }
-        
+
         if ($padBot == 'Small') {
             $class .= ' pb-4';
         } elseif ($padBot == 'Medium') {
@@ -116,6 +125,13 @@ class BaseExtension extends DataExtension
         }
 
         return $class;
+    }
+
+    public function ContainerWidthClass()
+    {
+        $width = $this->owner->ContainerWidth;
+        if ($width == 'Contained') return 'container';
+        else return 'container-fluid';
     }
 
     public function CurrentPageController()

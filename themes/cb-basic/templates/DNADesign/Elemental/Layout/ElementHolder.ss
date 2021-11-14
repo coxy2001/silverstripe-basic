@@ -1,5 +1,5 @@
 <section class="$SectionPaddingClass $BackgroundColourClass $TextColourClass $ExtraClass $SimpleClassName.LowerCase" id="$Anchor">
-    <div class="container">
+    <div class="$ContainerWidthClass">
         $Element
     </div>
 </section>

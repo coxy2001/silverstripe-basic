@@ -7,3 +7,6 @@ Only:
 SilverStripe\Core\Injector\Injector:
   SilverStripe\Assets\Upload_Validator:
     class: SilverStripe\MimeValidator\MimeUploadValidator
+    default_max_file_size:
+    '[image]': '16M'
+    '[document]': '12M'

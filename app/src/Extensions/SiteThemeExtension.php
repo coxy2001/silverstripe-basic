@@ -1,16 +1,15 @@
 <?php
 
-namespace {
+namespace Coxy\Website\Extensions {
 
     use SilverStripe\Forms\TextField;
     use SilverStripe\Forms\TabSet;
     use SilverStripe\Forms\FieldList;
     use SilverStripe\ORM\DataExtension;
-
     use SilverStripe\Control\Director;
-
     use TractorCow\Colorpicker\Color;
     use TractorCow\Colorpicker\Forms\ColorField;
+    use Axllent\Scss\ScssCompiler;
 
     class SiteThemeExtension extends DataExtension
     {
@@ -124,7 +123,7 @@ namespace {
             $data = $this->owner->renderWith('ThemeOptions');
             file_put_contents($overridesStylesheet, $data);
 
-            return;
+            ScssCompiler::flush();
         }
     }
 }

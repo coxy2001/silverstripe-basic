@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="$ContentLocale">
+
 <head>
     <% base_tag %>
     <meta charset="UTF-8">
@@ -7,10 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>$Title | $SiteConfig.Title</title>
     $MetaTags(false)
-
-    <% require themedCss('scss/style') %>
-
 </head>
+
 <body>
     <% include Header %>
 
@@ -20,4 +19,5 @@
 
     <% include Footer %>
 </body>
+
 </html>

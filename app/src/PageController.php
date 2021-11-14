@@ -27,6 +27,8 @@ namespace {
         protected function init()
         {
             parent::init();
+
+            Requirements::themedCSS('scss/style');
         }
     }
 }

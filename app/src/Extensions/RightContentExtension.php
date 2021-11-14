@@ -1,6 +1,6 @@
 <?php
 
-namespace Coxy\Elements\Extensions;
+namespace Coxy\Website\Extensions;
 
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
