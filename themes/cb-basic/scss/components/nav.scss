@@ -1,28 +1,9 @@
-.nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+nav {
+    .nav-item.current {
+        background-color: $body-bg;
 
-    padding: 0;
-    margin: 0;
-
-    flex-direction: row;
-    list-style: none;
-}
-
-.nav-item {
-    padding: 0.5rem 1rem;
-    color: $nav-link-color;
-    :hover {
-        color: $nav-link-hover-color;
-    }
-}
-
-.nav-item.current {
-    background-color: $body-bg;
-
-    a {
-        color: $nav-link-current-color;
+        a {
+            color: $nav-link-current-color;
+        }
     }
 }

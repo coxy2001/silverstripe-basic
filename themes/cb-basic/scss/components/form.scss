@@ -1,0 +1,33 @@
+.userform {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        @extend .form-control;
+    }
+
+    select {
+        @extend .form-select;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        @extend .form-check-input;
+    }
+
+    input[type="range"] {
+        @extend .form-range;
+    }
+
+    input[type="submit"] {
+        @extend .btn, .btn-primary;
+    }
+
+    label {
+        @extend .form-label;
+    }
+
+    &-fields {
+        margin-bottom: 0.8rem;
+    }
+}

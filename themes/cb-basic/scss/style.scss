@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
 
 // Theme Overrides
 @import "themeOptions";
@@ -8,10 +8,11 @@
 @import "bootstrap/bootstrap";
 
 // Components
-// @import "components/header";
-// @import "components/nav";
-// @import "components/page";
-// @import "components/footer";
+@import "components/header";
+@import "components/nav";
+@import "components/page";
+@import "components/form";
+@import "components/footer";
 
 // Elements
-// @import "elements/banner";
+@import "elements/banner";

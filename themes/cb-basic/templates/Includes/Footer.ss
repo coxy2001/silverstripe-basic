@@ -14,10 +14,10 @@
 
         <div class="row">
             <div class="col-12">
-                <ul class="footer_nav flex-column flex-md-row">
+                <ul class="nav mb-3 justify-content-center flex-column flex-md-row">
                     <% loop Menu(1) %>
-                        <li class="footer_nav-item $LinkingMode">
-                            <a class="footer_nav-item" href="$Link" title="$Title.XML">$MenuTitle.XML</a>
+                        <li class="nav-item $LinkingMode">
+                            <a class="nav-link" href="$Link" title="$Title.XML">$MenuTitle.XML</a>
                         </li>
                     <% end_loop %>
                 </ul>
