@@ -2,6 +2,7 @@
 
 use SilverStripe\Security\PasswordValidator;
 use SilverStripe\Security\Member;
+use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
 
 // remove PasswordValidator for SilverStripe 5.0
 $validator = PasswordValidator::create();
@@ -14,26 +15,26 @@ Member::set_password_validator($validator);
 
 $formats = [
     [
-        'title' => 'Misc Styles', 'items' => [
+        'title' => 'Buttons', 'items' => [
             [
-                'title' => 'Button',
+                'title' => 'Button Primary',
                 'selector' => 'a',
                 'wrapper' => false,
                 'classes' => 'btn btn-primary',
                 'merge_siblings' => false,
             ],
             [
-                'title' => 'Phone',
-                'inline' => 'span',
-                'classes' => 'phone-link',
-                'merge_siblings' => true,
+                'title' => 'Button Secondary',
+                'selector' => 'a',
+                'wrapper' => false,
+                'classes' => 'btn btn-secondary',
+                'merge_siblings' => false,
             ]
         ]
-    ],
+    ]
 ];
 
 TinyMCEConfig::get('cms')
-    ->setContentCSS(['/public/assets/_css/themes-cb-basic-scss-style.css'])
     ->addButtonsToLine(1, 'styleselect')
     ->setOptions([
         'importcss_append' => true,
