@@ -17,7 +17,6 @@ class SiteConfigExtension extends DataExtension
 
     private static $db = [
         'CompanyName' => 'Varchar',
-        'WebsiteAddress' => 'Varchar',
         'ContactEmail' => 'Varchar',
         'ContactPhone' => 'Varchar',
         'ContactMobile' => 'Varchar',
@@ -34,7 +33,8 @@ class SiteConfigExtension extends DataExtension
         'FacebookUrl' => 'Varchar(255)',
         'TwitterUrl' => 'Varchar(255)',
         'InstagramUrl' => 'Varchar(255)',
-        'YouTubeUrl' => 'Varchar(255)'
+        'YouTubeUrl' => 'Varchar(255)',
+        'SpotifyUrl' => 'Varchar(255)'
     ];
 
     private static $has_one = array(
@@ -85,7 +85,6 @@ class SiteConfigExtension extends DataExtension
             "Root.General.Data",
             array(
                 TextField::create("CompanyName", "Company Name"),
-                TextField::create("WebsiteAddress", "Website Address"),
                 TextField::create("ContactEmail", "Contact Email"),
                 TextField::create("ContactPhone", "Contact Phone"),
                 TextField::create("ContactMobile", "Contact Mobile"),
@@ -112,7 +111,8 @@ class SiteConfigExtension extends DataExtension
                 TextField::create("FacebookUrl", "Facebook Url"),
                 TextField::create("TwitterUrl", "Twitter Url"),
                 TextField::create("InstagramUrl", "Instagram Url"),
-                TextField::create("YouTubeUrl", "YouTube Url")
+                TextField::create("YouTubeUrl", "YouTube Url"),
+                TextField::create("SpotifyUrl", "Spotify Url")
             )
         );
     }
