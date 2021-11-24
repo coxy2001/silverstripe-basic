@@ -6,9 +6,14 @@
         @extend .form-control;
     }
 
+    .form-floating textarea {
+        height: auto;
+    }
+
     select {
         @extend .form-select;
     }
+
     .form-floating select {
         line-height: 1.2;
     }
