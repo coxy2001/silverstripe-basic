@@ -8,6 +8,7 @@
 
     select {
         @extend .form-select;
+        line-height: 1.2
     }
 
     input[type="radio"],
@@ -27,7 +28,11 @@
         @extend .form-label;
     }
 
-    .field{
+    .field {
         margin-bottom: 1rem;
+    }
+
+    textarea {
+        height: 7.5rem;
     }
 }
