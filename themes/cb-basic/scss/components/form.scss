@@ -8,7 +8,9 @@
 
     select {
         @extend .form-select;
-        line-height: 1.2
+    }
+    .form-floating select {
+        line-height: 1.2;
     }
 
     input[type="radio"],
