@@ -8,7 +8,6 @@ use SilverStripe\ORM\DataExtension;
 
 class DualContentExtension extends DataExtension
 {
-
     private static $db = [
         'HTML2' => 'HTMLText'
     ];
