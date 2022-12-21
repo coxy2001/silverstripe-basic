@@ -1,5 +1,7 @@
 /silverstripe-cache/
 /public/_resources/
+/public/_graphql/
+/.graphql-generated/
 /vendor/
 *.log
 .env

@@ -1,12 +1,12 @@
 {
     "name": "coxy2001/silverstripe-basic",
     "type": "silverstripe-recipe",
-    "description": "Basic SilverStripe website installer",
+    "description": "Coxy's SilverStripe installer",
     "require": {
-        "php": "^7.3",
-        "silverstripe/recipe-cms": "4.7.0@stable",
-        "silverstripe/framework": "4.7.0",
-        "silverstripe/login-forms": "^4.5",
+        "php": "^8.0",
+        "silverstripe/recipe-plugin": "^1.2",
+        "silverstripe/recipe-cms": "~4.12.0@stable",
+        "silverstripe/login-forms": "~4.8.0@stable",
         "silverstripe/elemental-fileblock": "^2.0",
         "silverstripe/elemental-bannerblock": "^2.0",
         "dnadesign/silverstripe-elemental-userforms": "3.x",
@@ -14,15 +14,22 @@
         "tractorcow/silverstripe-colorpicker": "^4@dev"
     },
     "require-dev": {
-        "sminnee/phpunit": "^5.7",
-        "sminnee/phpunit-mock-objects": "^3.4.5"
+        "phpunit/phpunit": "^9.5"
     },
     "extra": {
+        "project-files": [
+            "app/_config/*",
+            ".env.example",
+            ".graphql-generated/*"
+        ],
+        "public-files": [
+            "assets/*",
+            "favicon.ico"
+        ],
         "resources-dir": "_resources",
         "project-files-installed": [
             "app/.htaccess",
             "app/_config.php",
-            "app/_config/database.yml",
             "app/_config/mimevalidator.yml",
             "app/_config/mysite.yml",
             "app/src/Page.php",
@@ -35,7 +42,12 @@
         ]
     },
     "config": {
-        "process-timeout": 600
+        "process-timeout": 600,
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true
+        }
     },
     "prefer-stable": true,
     "minimum-stability": "dev"
