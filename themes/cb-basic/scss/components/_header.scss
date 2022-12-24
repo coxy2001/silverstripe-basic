@@ -1,0 +1,28 @@
+.header {
+    background-color: $header-bg;
+
+    &__container {
+        display: flex;
+    }
+
+    &__link {
+        width: 50%;
+        text-decoration: none;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0.5rem 2rem;
+        color: $header-colour;
+    }
+
+    &__logo {
+        padding: 0.5rem 2rem;
+    }
+
+    &__nav {
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+}

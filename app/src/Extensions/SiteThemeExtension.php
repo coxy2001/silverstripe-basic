@@ -150,11 +150,11 @@ class SiteThemeExtension extends DataExtension
 
     public function writeCustomScssFile()
     {
-        $baseFolder = Director::baseFolder();
-        $overridesStylesheet = $baseFolder . '/themes/cb-basic/scss/themeOptions.scss';
+        // $baseFolder = Director::baseFolder();
+        // $overridesStylesheet = $baseFolder . '/themes/cb-basic/scss/themeOptions.scss';
 
-        $data = $this->owner->renderWith('ThemeOptions');
-        file_put_contents($overridesStylesheet, $data);
+        // $data = $this->owner->renderWith('ThemeOptions');
+        // file_put_contents($overridesStylesheet, $data);
 
         ScssCompiler::flush();
     }

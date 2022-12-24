@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
     <div class="container">
         <%-- <div class="row">
             <div class="col-12">
@@ -12,23 +12,12 @@
             </div>
         </div> --%>
 
-        <div class="row">
-            <div class="col-12">
-                <ul class="nav mb-3 justify-content-center flex-column flex-md-row">
-                    <% loop Menu(1) %>
-                        <li class="nav-item $LinkingMode">
-                            <a class="nav-link" href="$Link" title="$Title.XML">$MenuTitle.XML</a>
-                        </li>
-                    <% end_loop %>
-                </ul>
-            </div>
+        <nav class="footer__nav">
+            <% loop Menu(1) %>
+                <a class="footer__link" href="$Link" title="$Title.XML">$MenuTitle.XML</a>
+            <% end_loop %>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-              <p class="copyright">$SiteConfig.CompanyName &copy; $Now.Year</p>
-            </div>
-        </div>
-      </div>
+        <p class="footer__copyright">$SiteConfig.CompanyName &copy; $Now.Year</p>
     </div>
 </footer>

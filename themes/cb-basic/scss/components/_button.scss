@@ -1,0 +1,56 @@
+@mixin button($colour) {
+    border: 1px solid $colour;
+    background-color: $colour;
+
+    &:hover:not(.btn--disabled) {
+        background-color: darken($colour, 10%);
+        border-color: darken($colour, 10%);
+    }
+
+    &:active:not(.btn--disabled) {
+        background-color: darken($colour, 20%);
+        border-color: darken($colour, 20%);
+    }
+}
+
+%btn {
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    color: #fff;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    @media (min-width: $sm) {
+        width: auto;
+    }
+}
+
+.btn {
+    &-primary {
+        @extend %btn;
+        @include button($primary);
+    }
+
+    &-danger {
+        @extend %btn;
+        @include button($danger);
+    }
+
+    &--disabled {
+        cursor: default;
+        pointer-events: none;
+        color: #ccc;
+        background-color: #444;
+        border-color: #444;
+        transition: none;
+    }
+}

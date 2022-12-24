@@ -1,0 +1,32 @@
+<?php
+
+namespace Coxy\Website\Extensions;
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\ORM\DataExtension;
+
+class ElementContentExtension extends DataExtension
+{
+    private static $db = [
+        'HTML2' => 'HTMLText'
+    ];
+
+    private static $element_class = "content";
+
+    public function updateCMSFields(FieldList $fields)
+    {
+        $content = $fields->fieldByName('Root.Main.HTML');
+        if (!$content) {
+            $content = $fields->fieldByName('Root.Main.Content');
+        }
+        if ($content) {
+            $content->setDescription('If no data is in the right side content block, this will fill the full width of the block');
+            $content->setTitle('Left Content');
+        }
+
+        $content2 = new HTMLEditorField('HTML2', 'Right Content');
+        $content2->setRows(5);
+        $fields->insertAfter($content->getName(), $content2);
+    }
+}

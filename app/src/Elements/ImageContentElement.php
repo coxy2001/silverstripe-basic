@@ -13,6 +13,7 @@ class ImageContentElement extends FileBlock
     private static $description = 'Image Content Block';
     private static $table_name = 'ElementImageContent';
     private static $icon = 'font-icon-block-banner';
+    private static $element_class = "image-content";
 
     private static $db = [
         'ImagePosition' => 'Enum(array("Left","Right"), "Right")',

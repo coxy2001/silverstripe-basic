@@ -1,0 +1,24 @@
+.banner {
+    &__image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__title {
+        color: $banner-colour;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__content {
+        color: $banner-colour;
+
+        @media (min-width: $md) {
+            margin: 0 8rem;
+        }
+    }
+}

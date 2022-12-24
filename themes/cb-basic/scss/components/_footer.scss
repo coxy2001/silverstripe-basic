@@ -1,0 +1,27 @@
+.footer {
+    text-align: center;
+    padding: 2rem;
+    color: $footer-colour;
+    background-color: $footer-bg;
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+
+    &__link {
+        color: $footer-link-colour;
+        text-decoration: none;
+        width: 100%;
+
+        &:hover {
+            color: darken($footer-link-colour, 20%);
+        }
+    }
+
+    &__copyright {
+        margin: 0;
+    }
+}
