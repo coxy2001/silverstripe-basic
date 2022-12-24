@@ -22,19 +22,17 @@ class ImageContentElement extends FileBlock
 
     public function getCMSFields()
     {
-        $this->beforeUpdateCMSFields(
-            function (FieldList $fields) {
-                $imagePos = new DropdownField(
-                    'ImagePosition',
-                    'Image Position',
-                    $this->dbObject('ImagePosition')->enumValues()
-                );
-                $fields->insertAfter('Root.Main.File', $imagePos);
-                $fields->fieldByName('Root.Main.Content')->setRows(8);
-            }
-        );
+        $fields = parent::getCMSFields();
+        $fields->fieldByName('Root.Main.Content')->setRows(8);
 
-        return parent::getCMSFields();
+        $imagePos = DropdownField::create(
+            "ImagePosition",
+            "Image Position",
+            $this->dbObject('ImagePosition')->enumValues()
+        );
+        $fields->insertAfter('Root.Main.File', $imagePos);
+
+        return $fields;
     }
 
     public function getType()

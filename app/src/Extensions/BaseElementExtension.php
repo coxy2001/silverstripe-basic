@@ -73,8 +73,26 @@ class BaseElementExtension extends DataExtension
         );
     }
 
-    public function getElementClass()
+    public function getElementClassesArray(): array
     {
-        return $this->owner->config()->get("element_class");
+        $owner = $this->owner;
+        $classes = [];
+
+        if ($owner->config()->get("element_class"))
+            $classes["element"] = $owner->config()->get("element_class");
+        if ($owner->BackgroundColour != "None")
+            $classes["bg-colour"] = $owner->BackgroundColour;
+        if ($owner->TextColour != "Inherit")
+            $classes["text-color"] = $owner->TextColour;
+        if ($owner->ExtraClass)
+            $classes["extra"] = $owner->ExtraClass;
+
+        $owner->invokeWithExtensions("updateElementClasses", $classes);
+        return $classes;
+    }
+
+    public function getElementClasses()
+    {
+        return implode(" ", $this->getElementClassesArray());
     }
 }
