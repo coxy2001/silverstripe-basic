@@ -47,50 +47,40 @@ class SiteConfigExtension extends DataExtension
     public function updateCMSFields(FieldList $fields)
     {
         // Logo and Favicon
-        $logoField = new UploadField(
-            $name = 'Logo',
-            $title = 'Logo'
-        );
-
-        $faviconField = new UploadField(
-            $name = 'Icon',
-            $title = 'Favicon'
-        );
+        $logoField = UploadField::create('Logo', 'Logo')->setFolderName(self::IMAGE_DIR);
+        $faviconField = UploadField::create('Icon', 'Favicon')->setFolderName(self::IMAGE_DIR);
 
         $logoField->getValidator()->setAllowedExtensions(
-            array('jpg', 'jpeg', 'png', 'gif', 'svg')
+            ['jpg', 'jpeg', 'png', 'gif', 'svg']
         );
 
         $faviconField->getValidator()->setAllowedExtensions(
-            array('ico', 'png')
+            ['ico', 'png']
         );
-
-        $logoField->setFolderName(self::IMAGE_DIR);
-        $faviconField->setFolderName(self::IMAGE_DIR);
 
         $fields->addFieldsToTab(
             "Root.Main",
-            array(
+            [
                 $logoField,
                 $faviconField
-            )
+            ]
         );
 
         // Company info and social media
         if (!$fields->fieldByName('Root.General')) {
-            $fields->insertAfter(new TabSet('General'), 'Main');
+            $fields->insertAfter(TabSet::create('General'), 'Main');
         }
 
         $fields->addFieldsToTab(
             "Root.General.Data",
-            array(
+            [
                 TextField::create("CompanyName", "Company Name"),
                 TextField::create("ContactEmail", "Contact Email"),
                 TextField::create("ContactPhone", "Contact Phone"),
                 TextField::create("ContactMobile", "Contact Mobile"),
                 TextField::create("ContactFax", "Contact Fax"),
-                TextareaField::create("OpenHours", "Open Hours")
-            )
+                TextareaField::create("OpenHours", "Open Hours"),
+            ]
         );
 
         $fields->addFieldsToTab(
@@ -101,19 +91,19 @@ class SiteConfigExtension extends DataExtension
                 TextField::create('CompanyCity'),
                 TextField::create('CompanyState'),
                 TextField::create('CompanyPostalCode'),
-                TextField::create("CompanyCountry")
+                TextField::create("CompanyCountry"),
             ]
         );
 
         $fields->addFieldsToTab(
             "Root.General.SocialMedia",
-            array(
+            [
                 TextField::create("FacebookUrl", "Facebook Url"),
                 TextField::create("TwitterUrl", "Twitter Url"),
                 TextField::create("InstagramUrl", "Instagram Url"),
                 TextField::create("YouTubeUrl", "YouTube Url"),
-                TextField::create("SpotifyUrl", "Spotify Url")
-            )
+                TextField::create("SpotifyUrl", "Spotify Url"),
+            ]
         );
     }
 

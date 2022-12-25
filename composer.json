@@ -10,7 +10,6 @@
         "silverstripe/elemental-fileblock": "^2.0",
         "silverstripe/elemental-bannerblock": "^2.0",
         "dnadesign/silverstripe-elemental-userforms": "3.x",
-        "axllent/silverstripe-scss": "^1.6",
         "tractorcow/silverstripe-colorpicker": "^4@dev"
     },
     "require-dev": {
