@@ -59,7 +59,7 @@ class SiteConfigExtension extends DataExtension
         );
 
         $fields->addFieldsToTab(
-            "Root.Main",
+            'Root.Main',
             [
                 $logoField,
                 $faviconField
@@ -72,14 +72,14 @@ class SiteConfigExtension extends DataExtension
         }
 
         $fields->addFieldsToTab(
-            "Root.General.Data",
+            'Root.General.Data',
             [
-                TextField::create("CompanyName", "Company Name"),
-                TextField::create("ContactEmail", "Contact Email"),
-                TextField::create("ContactPhone", "Contact Phone"),
-                TextField::create("ContactMobile", "Contact Mobile"),
-                TextField::create("ContactFax", "Contact Fax"),
-                TextareaField::create("OpenHours", "Open Hours"),
+                TextField::create('CompanyName', 'Company Name'),
+                TextField::create('ContactEmail', 'Contact Email'),
+                TextField::create('ContactPhone', 'Contact Phone'),
+                TextField::create('ContactMobile', 'Contact Mobile'),
+                TextField::create('ContactFax', 'Contact Fax'),
+                TextareaField::create('OpenHours', 'Open Hours'),
             ]
         );
 
@@ -91,18 +91,18 @@ class SiteConfigExtension extends DataExtension
                 TextField::create('CompanyCity'),
                 TextField::create('CompanyState'),
                 TextField::create('CompanyPostalCode'),
-                TextField::create("CompanyCountry"),
+                TextField::create('CompanyCountry'),
             ]
         );
 
         $fields->addFieldsToTab(
-            "Root.General.SocialMedia",
+            'Root.General.SocialMedia',
             [
-                TextField::create("FacebookUrl", "Facebook Url"),
-                TextField::create("TwitterUrl", "Twitter Url"),
-                TextField::create("InstagramUrl", "Instagram Url"),
-                TextField::create("YouTubeUrl", "YouTube Url"),
-                TextField::create("SpotifyUrl", "Spotify Url"),
+                TextField::create('FacebookUrl', 'Facebook Url'),
+                TextField::create('TwitterUrl', 'Twitter Url'),
+                TextField::create('InstagramUrl', 'Instagram Url'),
+                TextField::create('YouTubeUrl', 'YouTube Url'),
+                TextField::create('SpotifyUrl', 'Spotify Url'),
             ]
         );
     }

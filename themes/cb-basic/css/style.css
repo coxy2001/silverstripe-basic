@@ -103,8 +103,8 @@ a:hover {
 }
 
 .element {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .element__title {
   margin-bottom: 1rem;
@@ -232,6 +232,23 @@ a:hover {
   background-color: #444;
   border-color: #444;
   transition: none;
+}
+
+.accordion__item {
+  margin-bottom: 1rem;
+}
+.accordion__item-title {
+  color: #fff;
+  background-color: #aaa;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+.accordion__item-collapse {
+  padding: 0.5rem 1rem;
+  border: 1px solid #aaa;
+}
+.accordion__item-collapse :last-child {
+  margin-bottom: 0;
 }
 
 .banner__image {

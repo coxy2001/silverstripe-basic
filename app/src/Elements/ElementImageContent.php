@@ -3,17 +3,16 @@
 namespace Coxy\Website\Elements;
 
 use SilverStripe\ElementalFileBlock\Block\FileBlock;
-use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\DropdownField;
 
-class ImageContentElement extends FileBlock
+class ElementImageContent extends FileBlock
 {
-    private static $singular_name = 'Image Content Block';
-    private static $plural_name = 'Image Content Blocks';
-    private static $description = 'Image Content Block';
+    private static $singular_name = 'Image Content';
+    private static $plural_name = 'Image Contents';
+    private static $description = 'Image Content';
     private static $table_name = 'ElementImageContent';
     private static $icon = 'font-icon-block-banner';
-    private static $element_class = "image-content";
+    private static $element_class = 'image-content';
 
     private static $db = [
         'ImagePosition' => 'Enum(array("Left","Right"), "Right")',
@@ -26,8 +25,8 @@ class ImageContentElement extends FileBlock
         $fields->fieldByName('Root.Main.Content')->setRows(8);
 
         $imagePos = DropdownField::create(
-            "ImagePosition",
-            "Image Position",
+            'ImagePosition',
+            'Image Position',
             $this->dbObject('ImagePosition')->enumValues()
         );
         $fields->insertAfter('Root.Main.File', $imagePos);
@@ -45,7 +44,7 @@ class ImageContentElement extends FileBlock
         if ($this->File() && $this->File()->exists()) {
             return $this->getSummaryThumbnail() . $this->dbObject('Content')->Summary(20);
         }
-        return '';
+        return $this->dbObject('Content')->Summary(20);
     }
 
     protected function provideBlockSchema()

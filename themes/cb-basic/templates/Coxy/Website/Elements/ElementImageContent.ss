@@ -2,7 +2,7 @@
     <% if $ShowTitle && $Title %>
         <h2 class="element__title">$Title</h2>
     <% end_if %>
-    
+
     <div class="image-content__row">
         <% if $ImagePosition == "Left" %>
             <div class="image-content__container">

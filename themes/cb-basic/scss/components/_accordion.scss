@@ -1,0 +1,21 @@
+.accordion {
+    &__item {
+        margin-bottom: 1rem;
+
+        &-title {
+            color: #fff;
+            background-color: #aaa;
+            margin: 0;
+            padding: 0.5rem 1rem;
+        }
+
+        &-collapse {
+            padding: 0.5rem 1rem;
+            border: 1px solid #aaa;
+
+            :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

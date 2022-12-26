@@ -85,7 +85,7 @@ class SiteThemeExtension extends DataExtension
         }
 
         $fields->addFieldsToTab(
-            "Root.ThemeOptions.Body",
+            'Root.ThemeOptions.Body',
             [
                 ColorField::create('ColourBody', 'Body Colour'),
                 ColorField::create('ColourBodyBg', 'Body Background Colour'),
@@ -97,7 +97,7 @@ class SiteThemeExtension extends DataExtension
         );
 
         $fields->addFieldsToTab(
-            "Root.ThemeOptions.Headings",
+            'Root.ThemeOptions.Headings',
             [
                 ColorField::create('ColourH1', 'H1 Colour'),
                 TextField::create('WeightH1', 'H1 Weight'),
@@ -115,14 +115,14 @@ class SiteThemeExtension extends DataExtension
         );
 
         $fields->addFieldsToTab(
-            "Root.ThemeOptions.Header",
+            'Root.ThemeOptions.Header',
             [
                 ColorField::create('ColourHeaderBg', 'Header Background Colour'),
             ]
         );
 
         $fields->addFieldsToTab(
-            "Root.ThemeOptions.Navigation",
+            'Root.ThemeOptions.Navigation',
             [
                 ColorField::create('ColourNavLink', 'Navigation Link Colour'),
                 ColorField::create('ColourNavCurrent', 'Navigation Current Colour'),
@@ -131,7 +131,7 @@ class SiteThemeExtension extends DataExtension
         );
 
         $fields->addFieldsToTab(
-            "Root.ThemeOptions.Footer",
+            'Root.ThemeOptions.Footer',
             [
                 ColorField::create('ColourFooterBg', 'Footer Background color'),
                 ColorField::create('ColourFooter', 'Footer Text color'),

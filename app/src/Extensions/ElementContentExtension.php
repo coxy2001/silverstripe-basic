@@ -8,11 +8,11 @@ use SilverStripe\ORM\DataExtension;
 
 class ElementContentExtension extends DataExtension
 {
+    private static $element_class = 'content';
+
     private static $db = [
         'HTML2' => 'HTMLText'
     ];
-
-    private static $element_class = "content";
 
     public function updateCMSFields(FieldList $fields)
     {

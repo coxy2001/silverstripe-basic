@@ -62,14 +62,14 @@ class BaseElementExtension extends DataExtension
 
         $fields->addFieldsToTab(
             'Root.Settings',
-            array(
+            [
                 $backgroundColour,
                 $textColour,
                 $sectionPaddingType,
                 $sectionPaddingBottom,
                 $containerWidth,
                 $boxedItem
-            )
+            ]
         );
     }
 
@@ -78,21 +78,21 @@ class BaseElementExtension extends DataExtension
         $owner = $this->owner;
         $classes = [];
 
-        if ($owner->config()->get("element_class"))
-            $classes["element"] = $owner->config()->get("element_class");
-        if ($owner->BackgroundColour != "None")
-            $classes["bg-colour"] = $owner->BackgroundColour;
-        if ($owner->TextColour != "Inherit")
-            $classes["text-color"] = $owner->TextColour;
+        if ($owner->config()->get('element_class'))
+            $classes['element'] = $owner->config()->get('element_class');
+        if ($owner->BackgroundColour != 'None')
+            $classes['bg-colour'] = $owner->BackgroundColour;
+        if ($owner->TextColour != 'Inherit')
+            $classes['text-color'] = $owner->TextColour;
         if ($owner->ExtraClass)
-            $classes["extra"] = $owner->ExtraClass;
+            $classes['extra'] = $owner->ExtraClass;
 
-        $owner->invokeWithExtensions("updateElementClasses", $classes);
+        $owner->invokeWithExtensions('updateElementClasses', $classes);
         return $classes;
     }
 
     public function getElementClasses()
     {
-        return implode(" ", $this->getElementClassesArray());
+        return implode(' ', $this->getElementClassesArray());
     }
 }
