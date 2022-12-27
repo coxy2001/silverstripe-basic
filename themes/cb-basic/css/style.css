@@ -234,20 +234,36 @@ a:hover {
   transition: none;
 }
 
-.accordion__item {
+.accordion-item {
   margin-bottom: 1rem;
 }
-.accordion__item-title {
+.accordion-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: #fff;
   background-color: #aaa;
   margin: 0;
   padding: 0.5rem 1rem;
 }
-.accordion__item-collapse {
+.accordion-item__arrow {
+  width: 1rem;
+  transform-origin: center;
+  transition-duration: 0.2s;
+}
+.accordion-item__header--expanded .accordion-item__arrow {
+  transform: rotate(180deg);
+}
+.accordion-item__collapse {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 300ms ease-in-out;
+}
+.accordion-item__content {
   padding: 0.5rem 1rem;
   border: 1px solid #aaa;
 }
-.accordion__item-collapse :last-child {
+.accordion-item__content :last-child {
   margin-bottom: 0;
 }
 

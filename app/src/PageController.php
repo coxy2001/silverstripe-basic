@@ -29,6 +29,7 @@ namespace {
             parent::init();
 
             Requirements::themedCSS('css/style');
+            Requirements::themedJavascript('js/main');
         }
     }
 }

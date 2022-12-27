@@ -4,6 +4,7 @@ namespace Coxy\Website\Elements;
 
 use Coxy\Website\Models\AccordionItem;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridField_ActionMenu;
 use SilverStripe\Forms\GridField\GridFieldAddNewButton;
@@ -12,6 +13,7 @@ use SilverStripe\Forms\GridField\GridFieldDetailForm;
 use SilverStripe\Forms\GridField\GridFieldEditButton;
 use SilverStripe\Forms\GridField\GridFieldFilterHeader;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\Tab;
 
 class ElementAccordion extends BaseElement
 {
@@ -69,13 +71,15 @@ class ElementAccordion extends BaseElement
 
     public function getSummary()
     {
-        return $this->dbObject('Content')->Summary(20);
+        $itemCount = $this->AccordionItems()->count();
+        $summary = $this->dbObject('Content')->Summary(20);
+        return "$itemCount Items | $summary";
     }
 
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        $blockSchema['content'] = $this->dbObject('Content')->Summary(20);
+        $blockSchema['content'] = $this->getSummary();
         return $blockSchema;
     }
 }
