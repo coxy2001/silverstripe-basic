@@ -4,7 +4,6 @@ namespace Coxy\Website\Elements;
 
 use Coxy\Website\Models\AccordionItem;
 use DNADesign\Elemental\Models\BaseElement;
-use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridField_ActionMenu;
 use SilverStripe\Forms\GridField\GridFieldAddNewButton;
@@ -13,13 +12,12 @@ use SilverStripe\Forms\GridField\GridFieldDetailForm;
 use SilverStripe\Forms\GridField\GridFieldEditButton;
 use SilverStripe\Forms\GridField\GridFieldFilterHeader;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
-use SilverStripe\Forms\Tab;
 
 class ElementAccordion extends BaseElement
 {
     private static $singular_name = 'Accordion';
     private static $plural_name = 'Accordions';
-    private static $description = 'List of things';
+    private static $description = 'List of collapsable items';
     private static $table_name = 'ElementAccordion';
     private static $icon = 'font-icon-block-file-list';
     private static $inline_editable = false;

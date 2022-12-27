@@ -21,7 +21,7 @@ onEvent("[data-accordion]", "click", (e) => {
         next.style.maxHeight = null;
         e.target.classList.remove("accordion-item__header--expanded");
     } else {
-        next.style.maxHeight = next.scrollHeight + "px";
+        next.style.maxHeight = next.scrollHeight + 1 + "px";
         e.target.classList.add("accordion-item__header--expanded");
     }
 });

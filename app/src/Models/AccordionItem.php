@@ -7,6 +7,11 @@ use SilverStripe\ORM\DataObject;
 
 class AccordionItem extends DataObject
 {
+    private static $singular_name = 'Accordion Item';
+    private static $plural_name = "Accordion Item's";
+    private static $description = 'A collapsable item';
+    private static $table_name = 'AccordionItem';
+
     private static $db = [
         'Title' => 'Varchar',
         'Content' => 'HTMLText',

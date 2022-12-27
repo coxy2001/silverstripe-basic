@@ -247,6 +247,9 @@ a:hover {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
+.accordion-item__header:hover, .accordion-item__header--expanded {
+  background-color: #626262;
+}
 .accordion-item__arrow {
   width: 1rem;
   height: auto;
