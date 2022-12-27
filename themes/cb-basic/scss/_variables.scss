@@ -1,5 +1,6 @@
-$font-family-sans-serif: "Noto Sans JP", sans-serif;
-$font-family: $font-family-sans-serif;
+// Fonts
+$font-family: "Noto Sans JP", sans-serif;
+$font-family-heading: $font-family;
 
 // Breakpoints
 $sm: 576px;
@@ -16,26 +17,38 @@ $h4-font-size: 1.5rem;
 $h5-font-size: 1.25rem;
 $h6-font-size: 1rem;
 
-// Colours
-$body-colour: #000000;
-$body-bg: #ffffff;
-
-$heading-colour: #000;
+// Theme Colours
+$light: #fff;
+$dark: #000;
 
 $primary: #0088ff;
-$secondary: #ffff00;
+$secondary: #888;
+
+$success: #007300;
 $danger: #e30c0c;
+$warning: #d1d100;
+$info: #00d6d6;
 
-$link-colour: #0088ff;
-$banner-colour: #ffffff;
+// Page Colours
+$body-colour: $dark;
+$body-bg: #fff;
 
-$header-colour: #fff;
-$header-bg: #0088ff;
+$heading-colour: $dark;
+$link-colour: $primary;
 
-$nav-link-colour: #fff;
+$header-colour: $light;
+$header-bg: $primary;
+
+$nav-link-colour: $light;
+$nav-link-hover-colour: darken($nav-link-colour, 20%);
 $nav-link-current-colour: #ffff00;
-$nav-link-hover-colour: #ffff00;
 
 $footer-bg: #3c4147;
 $footer-colour: #fff;
 $footer-link-colour: $footer-colour;
+
+// Component Colours
+$accordion-colour: $light;
+$accordion-bg: $secondary;
+
+$banner-colour: $light;
