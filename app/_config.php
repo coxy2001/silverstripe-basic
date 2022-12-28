@@ -20,14 +20,14 @@ $formats = [
                 'title' => 'Button Primary',
                 'selector' => 'a',
                 'wrapper' => false,
-                'classes' => 'btn btn-primary',
+                'classes' => 'btn btn--primary',
                 'merge_siblings' => false,
             ],
             [
                 'title' => 'Button Secondary',
                 'selector' => 'a',
                 'wrapper' => false,
-                'classes' => 'btn btn-secondary',
+                'classes' => 'btn btn--secondary',
                 'merge_siblings' => false,
             ]
         ]

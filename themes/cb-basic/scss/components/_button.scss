@@ -13,7 +13,7 @@
     }
 }
 
-%btn {
+.btn {
     display: inline-block;
     width: 100%;
     height: fit-content;
@@ -26,23 +26,35 @@
     user-select: none;
     color: #fff;
     border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 150ms ease-in-out, background-color 150ms ease-in-out,
+        border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
 
     @media (min-width: $sm) {
         width: auto;
     }
-}
 
-.btn {
-    &-primary {
-        @extend %btn;
+    &--primary {
         @include button($primary);
     }
 
-    &-danger {
-        @extend %btn;
+    &--secondary {
+        @include button($secondary);
+    }
+
+    &--success {
+        @include button($success);
+    }
+
+    &--danger {
         @include button($danger);
+    }
+
+    &--warning {
+        @include button($warning);
+    }
+
+    &--info {
+        @include button($info);
     }
 
     &--disabled {

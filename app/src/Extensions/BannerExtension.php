@@ -8,9 +8,10 @@ use SilverStripe\ORM\DataExtension;
 
 class BannerExtension extends DataExtension
 {
+    private static $element_class = 'banner';
 
     private static $db = [
-        'BannerHeight' => 'Enum(array("30","40","50","60","70"), "40")'
+        'BannerHeight' => 'Enum(["30","40","50","60","70"], "40")'
     ];
 
     public function updateCMSFields(FieldList $fields)

@@ -15,7 +15,7 @@
         <% include SilverStripe\\UserForms\\Form\\UserFormFields %>
     </fieldset>
 <% else %>
-    <div class="userform-fields">
+    <div class="userform__fields">
         <% include SilverStripe\\UserForms\\Form\\UserFormFields %>
     </div>
 <% end_if %>
