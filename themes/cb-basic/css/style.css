@@ -293,6 +293,7 @@ a:hover {
   margin: 0;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  transition: background-color 100ms linear;
 }
 .accordion-item__header:hover, .accordion-item__header--expanded {
   background-color: #626262;
@@ -365,8 +366,8 @@ a:hover {
 .userform__fields {
   margin-bottom: 0.5rem;
 }
-.userform__field input,
-.userform__field select {
+.userform__field-holder input,
+.userform__field-holder select {
   display: inline-block;
   width: 100%;
   height: calc(2.25rem + 2px);
@@ -376,12 +377,22 @@ a:hover {
   border: 1px solid #000;
   border-radius: 0.25rem;
 }
+.userform__field-holder input[type=file] {
+  height: calc(2.5rem + 2px);
+  border: 2px dashed #999;
+}
 .userform__label {
   display: inline-block;
   margin-bottom: 0.5rem;
 }
 .userform__right-label {
   float: right;
+}
+.userform .error {
+  color: #e30c0c;
+}
+.userform .message {
+  margin-bottom: 0.5rem;
 }
 
 .pagination {
