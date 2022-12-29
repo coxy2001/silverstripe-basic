@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\Control\Director;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\Security\PasswordValidator;
 use SilverStripe\Security\Member;
 use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
@@ -8,6 +10,12 @@ use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
 $validator = PasswordValidator::create();
 // Settings are registered via Injector configuration - see passwords.yml in framework
 Member::set_password_validator($validator);
+
+// Enable IDE Annotator in dev mode
+if (Director::isDev()) {
+    Config::modify()->set('SilverLeague\IDEAnnotator\DataObjectAnnotator', 'enabled', true);
+    Config::modify()->set('SilverLeague\IDEAnnotator\DataObjectAnnotator', 'enabled_modules', ['app']);
+}
 
 /**
  * HTML Editor Config setup

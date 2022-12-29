@@ -3,6 +3,3 @@ Name: myproject
 ---
 SilverStripe\Core\Manifest\ModuleManifest:
   project: app
-
-SilverLeague\IDEAnnotator\DataObjectAnnotator:
-  enabled: true
