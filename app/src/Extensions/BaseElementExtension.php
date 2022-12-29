@@ -7,6 +7,15 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 
+/**
+ * Class \Coxy\Website\Extensions\BaseElementExtension
+ *
+ * @property string $TextColour
+ * @property string $BackgroundColour
+ * @property string $PaddingTop
+ * @property string $PaddingBottom
+ * @property bool $Contained
+ */
 class BaseElementExtension extends DataExtension
 {
     private static $db = [

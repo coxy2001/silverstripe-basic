@@ -4,7 +4,14 @@ namespace {
 
     use SilverStripe\CMS\Model\SiteTree;
 
-    class Page extends SiteTree
+    /**
+ * Class \Page
+ *
+ * @property int $ElementalAreaID
+ * @method \DNADesign\Elemental\Models\ElementalArea ElementalArea()
+ * @mixin \DNADesign\Elemental\Extensions\ElementalPageExtension
+ */
+class Page extends SiteTree
     {
         private static $db = [];
 

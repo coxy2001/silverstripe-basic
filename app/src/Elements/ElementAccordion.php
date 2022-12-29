@@ -14,6 +14,12 @@ use SilverStripe\Forms\GridField\GridFieldEditButton;
 use SilverStripe\Forms\GridField\GridFieldFilterHeader;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
+/**
+ * Class \Coxy\Website\Elements\ElementAccordion
+ *
+ * @property string $Content
+ * @method \SilverStripe\ORM\DataList|\Coxy\Website\Models\AccordionItem[] AccordionItems()
+ */
 class ElementAccordion extends BaseElement
 {
     private static $singular_name = 'Accordion';

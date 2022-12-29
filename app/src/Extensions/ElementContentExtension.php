@@ -6,6 +6,11 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\ORM\DataExtension;
 
+/**
+ * Class \Coxy\Website\Extensions\ElementContentExtension
+ *
+ * @property string $HTML2
+ */
 class ElementContentExtension extends DataExtension
 {
     private static $element_class = 'content';

@@ -11,6 +11,31 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\FieldType\DBField;
 
+/**
+ * Class \Coxy\Website\Extensions\SiteConfigExtension
+ *
+ * @property string $CompanyName
+ * @property string $ContactEmail
+ * @property string $ContactPhone
+ * @property string $ContactMobile
+ * @property string $ContactFax
+ * @property string $OpenHours
+ * @property string $CompanyAddress
+ * @property string $CompanyAddress2
+ * @property string $CompanyCity
+ * @property string $CompanyState
+ * @property string $CompanyPostalCode
+ * @property string $CompanyCountry
+ * @property string $FacebookUrl
+ * @property string $TwitterUrl
+ * @property string $InstagramUrl
+ * @property string $YouTubeUrl
+ * @property string $SpotifyUrl
+ * @property int $LogoID
+ * @property int $IconID
+ * @method \SilverStripe\Assets\Image Logo()
+ * @method \SilverStripe\Assets\Image Icon()
+ */
 class SiteConfigExtension extends DataExtension
 {
     const IMAGE_DIR = 'Uploads' . DIRECTORY_SEPARATOR . 'branding';

@@ -5,6 +5,12 @@ namespace Coxy\Website\Elements;
 use SilverStripe\ElementalFileBlock\Block\FileBlock;
 use SilverStripe\Forms\DropdownField;
 
+/**
+ * Class \Coxy\Website\Elements\ElementImageContent
+ *
+ * @property string $ImagePosition
+ * @property string $Content
+ */
 class ElementImageContent extends FileBlock
 {
     private static $singular_name = 'Image Content';

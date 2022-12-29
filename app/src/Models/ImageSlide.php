@@ -8,6 +8,16 @@ use SilverStripe\Assets\Image;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\ORM\DataObject;
 
+/**
+ * Class \Coxy\Website\Models\ImageSlide
+ *
+ * @property string $Title
+ * @property string $Content
+ * @property int $ImageID
+ * @property int $SliderID
+ * @method \SilverStripe\Assets\Image Image()
+ * @method \Coxy\Website\Elements\ElementImageSlider Slider()
+ */
 class ImageSlide extends DataObject
 {
     const IMAGE_DIR = 'Uploads' . DIRECTORY_SEPARATOR . 'slides';

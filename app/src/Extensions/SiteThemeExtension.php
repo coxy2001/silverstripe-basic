@@ -9,6 +9,35 @@ use SilverStripe\ORM\DataExtension;
 use TractorCow\Colorpicker\Color;
 use TractorCow\Colorpicker\Forms\ColorField;
 
+/**
+ * Class \Coxy\Website\Extensions\SiteThemeExtension
+ *
+ * @property string $ColourBody
+ * @property string $ColourBodyBg
+ * @property string $ColourPrimary
+ * @property string $ColourSecondary
+ * @property string $ColourLink
+ * @property string $ColourBanner
+ * @property string $ColourH1
+ * @property string $ColourH2
+ * @property string $ColourH3
+ * @property string $ColourH4
+ * @property string $ColourH5
+ * @property string $ColourH6
+ * @property string $WeightH1
+ * @property string $WeightH2
+ * @property string $WeightH3
+ * @property string $WeightH4
+ * @property string $WeightH5
+ * @property string $WeightH6
+ * @property string $ColourHeaderBg
+ * @property string $ColourNavLink
+ * @property string $ColourNavCurrent
+ * @property string $ColourNavHover
+ * @property string $ColourFooterBg
+ * @property string $ColourFooter
+ * @property string $ColourFooterLink
+ */
 class SiteThemeExtension extends DataExtension
 {
     private static $db = [

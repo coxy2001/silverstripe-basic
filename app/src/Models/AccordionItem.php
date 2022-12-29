@@ -5,6 +5,14 @@ namespace Coxy\Website\Models;
 use Coxy\Website\Elements\ElementAccordion;
 use SilverStripe\ORM\DataObject;
 
+/**
+ * Class \Coxy\Website\Models\AccordionItem
+ *
+ * @property string $Title
+ * @property string $Content
+ * @property int $AccordionID
+ * @method \Coxy\Website\Elements\ElementAccordion Accordion()
+ */
 class AccordionItem extends DataObject
 {
     private static $singular_name = 'Accordion Item';

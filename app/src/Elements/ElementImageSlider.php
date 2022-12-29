@@ -8,6 +8,12 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 
+/**
+ * Class \Coxy\Website\Elements\ElementImageSlider
+ *
+ * @property string $SlideHeight
+ * @method \SilverStripe\ORM\DataList|\Coxy\Website\Models\ImageSlide[] Slides()
+ */
 class ElementImageSlider extends BaseElement
 {
     private static $singular_name = 'Image Slider';
