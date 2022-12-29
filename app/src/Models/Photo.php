@@ -42,7 +42,7 @@ class Photo extends DataObject
     ];
 
     private static $summary_fields = [
-        'Image.CMSThumbnail' => 'Image',
+        'Image.CMSThumbnail' => 'Photo',
         'Caption' => 'Caption',
     ];
 
