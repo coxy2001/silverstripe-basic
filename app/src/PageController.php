@@ -30,6 +30,10 @@ namespace {
 
             Requirements::themedCSS('css/style');
             Requirements::themedJavascript('js/main');
+
+            // Splide
+            Requirements::themedCSS('css/splide-core.min');
+            Requirements::themedJavascript('js/splide.min');
         }
     }
 }

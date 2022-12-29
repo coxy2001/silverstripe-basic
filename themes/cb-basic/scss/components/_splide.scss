@@ -1,0 +1,82 @@
+.splide {
+    &__arrows {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: calc(50% - 60px);
+        left: 0;
+        right: 0;
+
+        @media (min-width: $md) {
+            top: calc(50% - 80px);
+        }
+    }
+
+    &__arrow {
+        margin: 0;
+        padding: 40px 20px;
+        line-height: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 5;
+
+        @media (min-width: $md) {
+            padding: 60px;
+        }
+
+        &--prev {
+            svg {
+                transform: rotate(180deg);
+                transform-origin: center;
+            }
+        }
+
+        svg {
+            fill: $splide-arrow-colour;
+        }
+        &:hover {
+            svg {
+                fill: darken($splide-arrow-colour, 10%);
+            }
+        }
+        &:active {
+            svg {
+                fill: darken($splide-arrow-colour, 20%);
+            }
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        &__page {
+            width: 1rem;
+            height: 1rem;
+            margin: 2px;
+            padding: 0;
+            background-color: $splide-page-colour;
+            border: none;
+            border-radius: 50%;
+            transition: background-color 100ms linear, width 100ms linear,
+                height 100ms linear;
+
+            &:hover {
+                background-color: lighten($splide-page-active-colour, 20%);
+            }
+
+            &.is-active {
+                width: 1.2rem;
+                height: 1.2rem;
+                background-color: $splide-page-active-colour;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+<?php
+
+namespace Coxy\Website\Elements;
+
+use DNADesign\Elemental\Models\BaseElement;
+
+class Element extends BaseElement
+{
+    private static $singular_name = '';
+    private static $plural_name = '';
+    private static $description = '';
+    private static $table_name = 'Element';
+    private static $icon = 'font-icon-block-';
+    private static $element_class = '';
+
+    private static $db = [];
+
+    private static $has_many = [];
+
+    public function getCMSFields()
+    {
+        $fields = parent::getCMSFields();
+
+
+
+        return $fields;
+    }
+
+    public function getType()
+    {
+        return $this->singular_name();
+    }
+
+    public function getSummary()
+    {
+        // return $this->dbObject('Content')->Summary(20);
+        return '';
+    }
+
+    protected function provideBlockSchema()
+    {
+        $blockSchema = parent::provideBlockSchema();
+        $blockSchema['content'] = $this->getSummary();
+        return $blockSchema;
+    }
+}

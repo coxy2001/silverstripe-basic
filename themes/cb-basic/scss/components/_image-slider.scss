@@ -1,0 +1,31 @@
+.image-slider {
+    &__slide {
+        display: flex;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        .image-slider--small & {
+            height: 40vh;
+        }
+        .image-slider--medium & {
+            height: 60vh;
+        }
+        .image-slider--large & {
+            height: 80vh;
+        }
+    }
+
+    &__content {
+        color: $banner-colour;
+
+        @media (min-width: $md) {
+            margin-left: 8rem;
+        }
+    }
+
+    &__title {
+        color: $banner-colour;
+    }
+}

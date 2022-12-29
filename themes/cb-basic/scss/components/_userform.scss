@@ -17,7 +17,7 @@
         }
 
         input[type="file"] {
-            height: calc(1.5rem + 1rem + 2px);
+            height: auto;
             border: 2px dashed #999;
         }
     }
@@ -31,11 +31,12 @@
         float: right;
     }
 
-    .error {
-        color: $danger;
+    .message {
+        display: inline-block;
+        margin-bottom: 0.5rem;
     }
 
-    .message {
-        margin-bottom: 0.5rem;
+    .error {
+        color: $danger;
     }
 }

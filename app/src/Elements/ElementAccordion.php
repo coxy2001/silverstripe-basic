@@ -7,6 +7,7 @@ use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridField_ActionMenu;
 use SilverStripe\Forms\GridField\GridFieldAddNewButton;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\Forms\GridField\GridFieldDetailForm;
 use SilverStripe\Forms\GridField\GridFieldEditButton;
@@ -38,18 +39,8 @@ class ElementAccordion extends BaseElement
 
         $content = HTMLEditorField::create('Content')->setRows(8);
 
-        $items = GridField::create('AccordionItems', 'Accordion Items', $this->AccordionItems());
-        $config = $items->getConfig();
-        $config->removeComponentsByType([
-            GridFieldFilterHeader::class,
-        ]);
-        $config->addComponents([
-            GridFieldAddNewButton::create(),
-            GridFieldDetailForm::create(),
-            GridField_ActionMenu::create(),
-            GridFieldEditButton::create(),
-            GridFieldDeleteAction::create(),
-        ]);
+        $config = GridFieldConfig_RecordEditor::create();
+        $items = GridField::create('AccordionItems', 'Accordion Items', $this->AccordionItems(), $config);
 
         $fields->addFieldsToTab(
             'Root.Main',
