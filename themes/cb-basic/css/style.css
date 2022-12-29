@@ -57,37 +57,32 @@ h6 {
   color: #000;
   font-weight: 700;
   line-height: 1.5;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 3rem;
-  margin-bottom: 2.4rem;
 }
 
 h2 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
 }
 
 h3 {
   font-size: 2rem;
-  margin-bottom: 1.6rem;
 }
 
 h4 {
   font-size: 1.5rem;
-  margin-bottom: 1.2rem;
 }
 
 h5 {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
 }
 
 h6 {
   font-size: 1rem;
-  margin-bottom: 0.8rem;
 }
 
 p {
@@ -102,12 +97,39 @@ a:hover {
   text-decoration: none;
 }
 
-.element {
+.element--pad-top-small {
+  margin-top: 1rem;
+}
+.element--pad-top-medium {
   margin-top: 2rem;
+}
+.element--pad-top-large {
+  margin-top: 3rem;
+}
+.element--pad-bottom-small {
+  margin-bottom: 1rem;
+}
+.element--pad-bottom-medium {
   margin-bottom: 2rem;
 }
-.element__title {
-  margin-bottom: 1rem;
+.element--pad-bottom-large {
+  margin-bottom: 3rem;
+}
+.element--text-light * {
+  color: #fff;
+}
+.element--text-dark * {
+  color: #000;
+}
+.element--bg-primary, .element--bg-secondary {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.element--bg-primary {
+  background-color: #0088ff;
+}
+.element--bg-secondary {
+  background-color: #888;
 }
 
 .header {

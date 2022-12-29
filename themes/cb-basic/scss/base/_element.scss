@@ -1,8 +1,41 @@
 .element {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    &--pad-top-small {
+        margin-top: 1rem;
+    }
+    &--pad-top-medium {
+        margin-top: 2rem;
+    }
+    &--pad-top-large {
+        margin-top: 3rem;
+    }
 
-    &__title {
+    &--pad-bottom-small {
         margin-bottom: 1rem;
+    }
+    &--pad-bottom-medium {
+        margin-bottom: 2rem;
+    }
+    &--pad-bottom-large {
+        margin-bottom: 3rem;
+    }
+
+    &--text-light * {
+        color: $light;
+    }
+    &--text-dark * {
+        color: $dark;
+    }
+
+    &--bg-primary,
+    &--bg-secondary {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &--bg-primary {
+        background-color: $primary;
+    }
+    &--bg-secondary {
+        background-color: $secondary;
     }
 }

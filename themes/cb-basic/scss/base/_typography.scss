@@ -9,37 +9,32 @@ h6 {
     color: $heading-colour;
     font-weight: 700;
     line-height: 1.5;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 h1 {
     font-size: $h1-font-size;
-    margin-bottom: $h1-font-size * 0.8;
 }
 
 h2 {
     font-size: $h2-font-size;
-    margin-bottom: $h2-font-size * 0.8;
 }
 
 h3 {
     font-size: $h3-font-size;
-    margin-bottom: $h3-font-size * 0.8;
 }
 
 h4 {
     font-size: $h4-font-size;
-    margin-bottom: $h4-font-size * 0.8;
 }
 
 h5 {
     font-size: $h5-font-size;
-    margin-bottom: $h5-font-size * 0.8;
 }
 
 h6 {
     font-size: $h6-font-size;
-    margin-bottom: $h6-font-size * 0.8;
 }
 
 // Element defaults

@@ -2,97 +2,111 @@
 
 namespace Coxy\Website\Extensions;
 
-use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 
 class BaseElementExtension extends DataExtension
 {
     private static $db = [
-        'BackgroundColour' => 'Enum(array("None","Primary","Secondary"), "None")',
-        'TextColour' => 'Enum(array("Inherit","Light","Dark"), "Inherit")',
-        'SectionPadTop' => 'Enum(array("Small","Medium","Large","None"), "Medium")',
-        'SectionPadBottom' => 'Enum(array("Same","Small","Medium","Large","None"), "Same")',
-        'ContainerWidth' => 'Enum(array("Contained","Full"), "Contained")',
-        'BoxedItem' => 'Boolean'
+        'TextColour' => 'Varchar(16)',
+        'BackgroundColour' => 'Varchar(16)',
+        'PaddingTop' => 'Varchar(16)',
+        'PaddingBottom' => 'Varchar(16)',
+        'Contained' => 'Boolean',
+    ];
+
+    private static $defaults = [
+        'TextColour' => '',
+        'BackgroundColour' => '',
+        'PaddingTop' => 'medium',
+        'PaddingBottom' => 'medium',
+        'Contained' => true,
     ];
 
     public function updateCMSFields(FieldList $fields)
     {
-        $ownerSingleton = $this->getOwner();
-
-        $backgroundColour = new DropdownField(
-            'BackgroundColour',
-            'Background Colour',
-            $ownerSingleton->dbObject('BackgroundColour')->enumValues()
-        );
-        $backgroundColour->setDescription('Set background colour');
-
-        $textColour = new DropdownField(
+        $textColour = DropdownField::create(
             'TextColour',
             'Text Colour',
-            $ownerSingleton->dbObject('TextColour')->enumValues()
+            [
+                '' => 'Inherit',
+                'light' => 'Light',
+                'dark' => 'Dark',
+            ]
         );
-        $textColour->setDescription('Override text colour style');
 
-        $sectionPaddingType = new DropdownField(
-            'SectionPadTop',
-            'Section Padding',
-            $ownerSingleton->dbObject('SectionPadTop')->enumValues()
+        $backgroundColour = DropdownField::create(
+            'BackgroundColour',
+            'Background Colour',
+            [
+                '' => 'None',
+                'primary' => 'Primary',
+                'secondary' => 'Secondary',
+            ]
         );
-        $sectionPaddingType->setDescription('Vertical padding of block');
 
-        $sectionPaddingBottom = new DropdownField(
-            'SectionPadBottom',
-            'Section Padding Bottom',
-            $ownerSingleton->dbObject('SectionPadBottom')->enumValues()
+        $paddingTop = DropdownField::create(
+            'PaddingTop',
+            'Padding Top',
+            [
+                '' => 'None',
+                'small' => 'Small',
+                'medium' => 'Default',
+                'large' => 'Large',
+            ]
         );
-        $sectionPaddingBottom->setDescription('Bottom padding of block');
 
-        $containerWidth = new DropdownField(
-            'ContainerWidth',
-            'Container Width',
-            $ownerSingleton->dbObject('ContainerWidth')->enumValues()
+        $paddingBottom = DropdownField::create(
+            'PaddingBottom',
+            'Padding Bottom',
+            [
+                '' => 'None',
+                'small' => 'Small',
+                'medium' => 'Default',
+                'large' => 'Large',
+            ]
         );
-        $containerWidth->setDescription('Set block width to contained or full');
 
-        $boxedItem = new CheckboxField('BoxedItem', 'Boxed Item?');
-        $boxedItem->setDescription('Add a box around this block to contain the background colour');
+        $contained = CheckboxField::create('Contained', 'Block width contained?');
 
         $fields->addFieldsToTab(
             'Root.Settings',
             [
-                $backgroundColour,
                 $textColour,
-                $sectionPaddingType,
-                $sectionPaddingBottom,
-                $containerWidth,
-                $boxedItem
+                $backgroundColour,
+                $paddingTop,
+                $paddingBottom,
+                $contained,
             ]
         );
     }
 
-    public function getElementClassesArray(): array
+    public function getElementClasses()
     {
         $owner = $this->owner;
         $classes = [];
 
         if ($owner->config()->get('element_class'))
             $classes['element'] = $owner->config()->get('element_class');
-        if ($owner->BackgroundColour != 'None')
-            $classes['bg-colour'] = $owner->BackgroundColour;
-        if ($owner->TextColour != 'Inherit')
-            $classes['text-color'] = $owner->TextColour;
+        if ($owner->TextColour)
+            $classes['text-color'] = 'element--text-' . $owner->TextColour;
+        if ($owner->BackgroundColour)
+            $classes['bg-colour'] = 'element--bg-' . $owner->BackgroundColour;
+        if ($owner->PaddingTop)
+            $classes['pad-top'] = 'element--pad-top-' . $owner->PaddingTop;
+        if ($owner->PaddingBottom)
+            $classes['pad-bottom'] = 'element--pad-bottom-' . $owner->PaddingBottom;
         if ($owner->ExtraClass)
             $classes['extra'] = $owner->ExtraClass;
 
         $owner->invokeWithExtensions('updateElementClasses', $classes);
-        return $classes;
+        return implode(' ', $classes);
     }
 
-    public function getElementClasses()
+    public function getContainerClass()
     {
-        return implode(' ', $this->getElementClassesArray());
+        return $this->owner->Contained ? 'container' : 'container-full';
     }
 }
