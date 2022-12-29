@@ -57,12 +57,9 @@ class ImageSlide extends DataObject
         $fields = parent::getCMSFields();
         $fields->removeByName('SliderID');
 
-        $content = HTMLEditorField::create('Content')->setRows(8);
-        $logoField = UploadField::create('Image')->setFolderName(self::IMAGE_DIR);
-
         $fields->addFieldsToTab('Root.Main', [
-            $content,
-            $logoField,
+            HTMLEditorField::create('Content')->setRows(8),
+            UploadField::create('Image')->setFolderName(self::IMAGE_DIR),
         ]);
 
         return $fields;

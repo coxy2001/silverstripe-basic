@@ -60,21 +60,19 @@
         &__page {
             width: 1rem;
             height: 1rem;
-            margin: 2px;
+            margin: 4px;
             padding: 0;
             background-color: $splide-page-colour;
             border: none;
             border-radius: 50%;
-            transition: background-color 100ms linear, width 100ms linear,
-                height 100ms linear;
+            transition: transform 100ms linear, background-color 100ms linear;
 
             &:hover {
                 background-color: lighten($splide-page-active-colour, 20%);
             }
 
             &.is-active {
-                width: 1.2rem;
-                height: 1.2rem;
+                transform: scale(1.2);
                 background-color: $splide-page-active-colour;
             }
         }
