@@ -37,10 +37,10 @@ class SiteConfigExtension extends DataExtension
         'SpotifyUrl' => 'Varchar(255)'
     ];
 
-    private static $has_one = array(
+    private static $has_one = [
         'Logo' => Image::class,
         'Icon' => Image::class
-    );
+    ];
 
     private static $owns = ['Logo', 'Icon'];
 

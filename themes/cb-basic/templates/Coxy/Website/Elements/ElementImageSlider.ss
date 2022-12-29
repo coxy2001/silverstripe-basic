@@ -13,7 +13,9 @@
                         <div class="image-slider__slide" style="background-image: url({$Image.URL});">
                             <div class="image-slider__container container">
                                 <div class="image-slider__content">
-                                    <h2 class="image-slider__title">$Title</h2>
+                                    <% if $Title %>
+                                        <h2 class="image-slider__title">$Title</h2>
+                                    <% end_if %>
                                     $Content
                                 </div>
                             </div>
