@@ -5,8 +5,7 @@ namespace Coxy\Website\Models;
 use Colymba\BulkUpload\BulkUploader;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
-use SilverStripe\Forms\GridField\GridField;
-use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\DataObject;
@@ -65,30 +64,33 @@ class PhotoAlbum extends DataObject
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName('Photos');
-
-        if ($this->exists()) {
-            $config = GridFieldConfig_RecordEditor::create();
-            $config->addComponents([
-                $bulkUpload = new BulkUploader(),
-                new GridFieldOrderableRows('Sort'),
-            ]);
-            $bulkUpload->setUfSetup('setFolderName', Photo::IMAGE_DIR);
-            $photos = GridField::create('Photos', 'Photos', $this->Photos(), $config);
-        } else {
-            $photos = LiteralField::create(
-                'info',
-                '<p class="alert alert-info">Save album to add photos</p>'
-            );
-        }
 
         $fields->addFieldsToTab('Root.Main', [
-            HTMLEditorField::create('Description')->setRows(5),
+            HTMLEditorField::create('Description')->setRows(8),
             UploadField::create('AlbumCover', 'Album Cover')
                 ->setFolderName(Photo::IMAGE_DIR)
                 ->setDescription('Will use the first photo in the album if left blank'),
-            $photos,
         ]);
+
+        if ($this->exists()) {
+            $config = $fields->fieldByName('Root.Photos.Photos')->getConfig();
+            $config->removeComponentsByType([
+                GridFieldAddExistingAutocompleter::class,
+            ]);
+            $config->addComponents([
+                $bulkUpload = new BulkUploader(),
+                GridFieldOrderableRows::create('Sort'),
+            ]);
+            $bulkUpload->setUfSetup('setFolderName', Photo::IMAGE_DIR);
+        } else {
+            $fields->addFieldToTab(
+                'Root.Main',
+                LiteralField::create(
+                    'info',
+                    '<p class="alert alert-info">Save album to add photos</p>'
+                )
+            );
+        }
 
         return $fields;
     }

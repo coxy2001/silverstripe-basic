@@ -22,18 +22,18 @@ body {
 
 .container {
     @media (min-width: $sm) {
-        max-width: $sm;
+        max-width: $sm - 16px;
     }
     @media (min-width: $md) {
-        max-width: $md;
+        max-width: $md - 16px;
     }
     @media (min-width: $lg) {
-        max-width: $lg;
+        max-width: $lg - 16px;
     }
     @media (min-width: $xl) {
-        max-width: $xl;
+        max-width: $xl - 16px;
     }
     @media (min-width: $xxl) {
-        max-width: $xxl;
+        max-width: $xxl - 16px;
     }
 }

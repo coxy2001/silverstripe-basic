@@ -61,14 +61,13 @@ class Photo extends DataObject
             UploadField::create('Image')->setFolderName(self::IMAGE_DIR)
         );
 
-        $fields->addFieldsToTab(
-            'Root.Main',
-            [
-                TextField::create('Caption'),
-                $fields->fieldByName('Root.Main.AlbumID')
-                    ->setDescription('Change the album this photo belongs to')
-            ]
+        $fields->insertBefore(
+            'AlbumID',
+            TextField::create('Caption')
         );
+
+        $fields->fieldByName('Root.Main.AlbumID')
+            ->setDescription('Change the album this photo belongs to');
 
         return $fields;
     }
