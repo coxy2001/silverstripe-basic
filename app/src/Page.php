@@ -1,10 +1,8 @@
 <?php
 
-namespace {
+use SilverStripe\CMS\Model\SiteTree;
 
-    use SilverStripe\CMS\Model\SiteTree;
-
-    /**
+/**
  * Class \Page
  *
  * @property int $ElementalAreaID
@@ -12,9 +10,8 @@ namespace {
  * @mixin \DNADesign\Elemental\Extensions\ElementalPageExtension
  */
 class Page extends SiteTree
-    {
-        private static $db = [];
+{
+    private static $db = [];
 
-        private static $has_one = [];
-    }
+    private static $has_one = [];
 }

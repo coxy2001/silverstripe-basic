@@ -5,7 +5,7 @@
 <% end_if %>
 
 <% if $Slides %>
-    <section class="splide">
+    <section class="splide splide--regular">
         <div class="splide__track">
             <ul class="splide__list">
                 <% loop $Slides %>

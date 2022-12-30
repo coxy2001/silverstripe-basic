@@ -7,21 +7,28 @@ function onEvent(query, event, callback) {
     });
 }
 
-onEvent("[data-accordion]", "click", (e) => {
-    const accordion = e.target.dataset.accordion;
-    $$(`[data-accordion="${accordion}"]`).forEach((element) => {
-        if (element != e.target) {
-            element.nextElementSibling.style.maxHeight = null;
-            element.classList.remove("accordion-item__header--expanded");
+document.addEventListener("DOMContentLoaded", () => {
+    onEvent("[data-accordion]", "click", function (e) {
+        const accordion = this.dataset.accordion;
+        $$(`[data-accordion="${accordion}"]`).forEach((element) => {
+            if (element != this) {
+                element.nextElementSibling.style.maxHeight = null;
+                element.classList.remove("accordion-item__header--expanded");
+            }
+        });
+
+        const next = this.nextElementSibling;
+        if (next.style.maxHeight) {
+            next.style.maxHeight = null;
+            this.classList.remove("accordion-item__header--expanded");
+        } else {
+            next.style.maxHeight = next.scrollHeight + 1 + "px";
+            this.classList.add("accordion-item__header--expanded");
         }
     });
 
-    const next = e.target.nextElementSibling;
-    if (next.style.maxHeight) {
-        next.style.maxHeight = null;
-        e.target.classList.remove("accordion-item__header--expanded");
-    } else {
-        next.style.maxHeight = next.scrollHeight + 1 + "px";
-        e.target.classList.add("accordion-item__header--expanded");
-    }
+    new Splide(".splide--regular", {
+        type: "loop",
+        lazyLoad: "nearby",
+    }).mount();
 });
