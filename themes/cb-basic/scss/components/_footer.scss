@@ -6,13 +6,19 @@
 
     &__nav {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         width: 100%;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
+
+        @media (min-width: $md) {
+            flex-direction: row;
+        }
     }
 
     &__link {
         color: $footer-link-colour;
+        margin-bottom: 1rem;
         text-decoration: none;
         width: 100%;
 

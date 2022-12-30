@@ -19,6 +19,7 @@
 
     &__content {
         color: $banner-colour;
+        margin-left: 5rem;
 
         @media (min-width: $md) {
             margin-left: 8rem;

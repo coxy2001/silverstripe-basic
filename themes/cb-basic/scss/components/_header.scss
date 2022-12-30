@@ -3,11 +3,21 @@
 
     &__container {
         display: flex;
+        flex-direction: column;
+
+        @media (min-width: $lg) {
+            flex-direction: row;
+        }
     }
 
     &__link {
-        width: 50%;
+        width: 100%;
+        text-align: center;
         text-decoration: none;
+
+        @media (min-width: $lg) {
+            text-align: left;
+        }
     }
 
     &__title {
@@ -21,7 +31,7 @@
     }
 
     &__nav {
-        width: 50%;
+        width: 100%;
         display: flex;
         align-items: center;
     }
