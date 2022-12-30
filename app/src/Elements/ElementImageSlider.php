@@ -2,11 +2,13 @@
 
 namespace Coxy\Website\Elements;
 
+use Colymba\BulkUpload\BulkUploader;
 use Coxy\Website\Models\ImageSlide;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 /**
  * Class \Coxy\Website\Elements\ElementImageSlider
@@ -55,12 +57,13 @@ class ElementImageSlider extends BaseElement
             ]
         );
 
-        $slides = GridField::create(
-            'Slides',
-            'Slides',
-            $this->Slides(),
-            GridFieldConfig_RecordEditor::create()
-        );
+        $config = GridFieldConfig_RecordEditor::create();
+        $config->addComponents([
+            $bulkUpload = new BulkUploader(),
+            GridFieldOrderableRows::create('Sort'),
+        ]);
+        $bulkUpload->setUfSetup('setFolderName', ImageSlide::IMAGE_DIR);
+        $slides = GridField::create('Slides', 'Slides', $this->Slides(), $config);
 
         $fields->addFieldsToTab(
             'Root.Main',

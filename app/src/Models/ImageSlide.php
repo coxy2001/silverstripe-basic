@@ -13,6 +13,7 @@ use SilverStripe\ORM\DataObject;
  *
  * @property string $Title
  * @property string $Content
+ * @property int $Sort
  * @property int $ImageID
  * @property int $SliderID
  * @method \SilverStripe\Assets\Image Image()
@@ -30,6 +31,7 @@ class ImageSlide extends DataObject
     private static $db = [
         'Title' => 'Varchar',
         'Content' => 'HTMLText',
+        'Sort' => 'Int',
     ];
 
     private static $has_one = [
@@ -55,7 +57,7 @@ class ImageSlide extends DataObject
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName('SliderID');
+        $fields->removeByName(['SliderID', 'Sort']);
 
         $fields->addFieldsToTab('Root.Main', [
             HTMLEditorField::create('Content')->setRows(8),
