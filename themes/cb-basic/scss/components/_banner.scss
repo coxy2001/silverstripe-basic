@@ -1,24 +1,31 @@
 .banner {
     &__image {
+        display: flex;
+        align-items: center;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-    }
 
-    &__title {
-        color: $banner-colour;
-    }
-
-    &__container {
-        display: flex;
-        align-items: center;
+        .banner--small & {
+            height: 30vh;
+        }
+        .banner--medium & {
+            height: 50vh;
+        }
+        .banner--large & {
+            height: 70vh;
+        }
     }
 
     &__content {
         color: $banner-colour;
 
         @media (min-width: $md) {
-            margin: 0 8rem;
+            margin-left: 8rem;
         }
+    }
+
+    &__title {
+        color: $banner-colour;
     }
 }

@@ -343,24 +343,31 @@ a:hover {
 }
 
 .banner__image {
+  display: flex;
+  align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.banner__title {
-  color: #888;
+.banner--small .banner__image {
+  height: 30vh;
 }
-.banner__container {
-  display: flex;
-  align-items: center;
+.banner--medium .banner__image {
+  height: 50vh;
+}
+.banner--large .banner__image {
+  height: 70vh;
 }
 .banner__content {
   color: #888;
 }
 @media (min-width: 768px) {
   .banner__content {
-    margin: 0 8rem;
+    margin-left: 8rem;
   }
+}
+.banner__title {
+  color: #888;
 }
 
 .content__row {
@@ -376,8 +383,17 @@ a:hover {
 
 .image-content__row {
   display: flex;
+  flex-direction: column;
   margin-left: -1rem;
   margin-right: -1rem;
+}
+@media (min-width: 768px) {
+  .image-content--pos-left .image-content__row {
+    flex-direction: row-reverse;
+  }
+  .image-content--pos-right .image-content__row {
+    flex-direction: row;
+  }
 }
 .image-content__col {
   width: 100%;

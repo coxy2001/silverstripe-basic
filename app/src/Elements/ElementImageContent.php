@@ -21,7 +21,7 @@ class ElementImageContent extends FileBlock
     private static $element_class = 'image-content';
 
     private static $db = [
-        'ImagePosition' => 'Enum(array("Left","Right"), "Right")',
+        'ImagePosition' => 'Varchar(16)',
         'Content' => 'HTMLText'
     ];
 
@@ -33,7 +33,10 @@ class ElementImageContent extends FileBlock
         $imagePos = DropdownField::create(
             'ImagePosition',
             'Image Position',
-            $this->dbObject('ImagePosition')->enumValues()
+            [
+                'left' => 'Left',
+                'right' => 'Right',
+            ]
         );
         $fields->insertAfter('Root.Main.File', $imagePos);
 
@@ -58,5 +61,10 @@ class ElementImageContent extends FileBlock
         $blockSchema = parent::provideBlockSchema();
         $blockSchema['content'] = $this->dbObject('Content')->Summary(20);
         return $blockSchema;
+    }
+
+    public function updateElementClasses(&$classes)
+    {
+        $classes['position'] = 'image-content--pos-' . $this->ImagePosition;
     }
 }

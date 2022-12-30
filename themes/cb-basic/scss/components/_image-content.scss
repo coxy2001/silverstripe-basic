@@ -1,8 +1,18 @@
 .image-content {
     &__row {
         display: flex;
+        flex-direction: column;
         margin-left: -1rem;
         margin-right: -1rem;
+
+        @media (min-width: $md) {
+            .image-content--pos-left & {
+                flex-direction: row-reverse;
+            }
+            .image-content--pos-right & {
+                flex-direction: row;
+            }
+        }
     }
 
     &__col {

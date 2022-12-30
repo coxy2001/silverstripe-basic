@@ -16,18 +16,28 @@ class BannerExtension extends DataExtension
     private static $element_class = 'banner';
 
     private static $db = [
-        'BannerHeight' => 'Enum(["30","40","50","60","70"], "40")'
+        'BannerHeight' => 'Varchar(16)'
     ];
 
     public function updateCMSFields(FieldList $fields)
     {
-        $ownerSingleton = $this->getOwner();
-
-        $bannerHeight = new DropdownField(
-            'BannerHeight',
-            'Banner Height',
-            $ownerSingleton->dbObject('BannerHeight')->enumValues()
+        $fields->insertAfter(
+            'Title',
+            DropdownField::create(
+                'BannerHeight',
+                'Banner Height',
+                [
+                    'small' => 'Small',
+                    'medium' => 'Medium',
+                    'large' => 'Large',
+                ]
+            )
         );
-        $bannerHeight->setDescription('Set banner height');
+    }
+
+    public function updateElementClasses(&$classes)
+    {
+        $owner = $this->owner;
+        $classes['height'] = 'banner--' . $owner->BannerHeight;
     }
 }

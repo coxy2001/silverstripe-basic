@@ -1,4 +1,4 @@
-<div class="banner__image" style="background-image: url($File.URL);min-height: {$BannerHeight}vh;">
+<div class="banner__image" style="background-image: url({$File.URL});">
     <div class="banner__container $ContainerClass">
         <div class="banner__content">
             <% if $ShowTitle && $Title %>
