@@ -10,6 +10,7 @@ use SilverStripe\ORM\DataObject;
  *
  * @property string $Title
  * @property string $Content
+ * @property int $Sort
  * @property int $AccordionID
  * @method \Coxy\Website\Elements\ElementAccordion Accordion()
  */
@@ -23,6 +24,7 @@ class AccordionItem extends DataObject
     private static $db = [
         'Title' => 'Varchar',
         'Content' => 'HTMLText',
+        'Sort' => 'Int',
     ];
 
     private static $has_one = [
@@ -32,7 +34,7 @@ class AccordionItem extends DataObject
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName('AccordionID');
+        $fields->removeByName(['AccordionID', 'Sort']);
         return $fields;
     }
 }

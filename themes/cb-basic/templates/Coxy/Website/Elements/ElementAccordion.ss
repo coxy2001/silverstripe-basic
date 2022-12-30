@@ -5,7 +5,7 @@
     $Content
     <% if $AccordionItems %>
         <div class="accordion__items">
-            <% loop $AccordionItems %>
+            <% loop $AccordionItems.Sort('Sort') %>
                 <div class="accordion-item">
                     <% if $Title %>
                         <h5 class="accordion-item__header" data-accordion="$AccordionID">

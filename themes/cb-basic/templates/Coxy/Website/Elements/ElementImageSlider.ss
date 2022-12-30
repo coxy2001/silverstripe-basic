@@ -8,7 +8,7 @@
     <section class="splide splide--regular">
         <div class="splide__track">
             <ul class="splide__list">
-                <% loop $Slides %>
+                <% loop $Slides.Sort('Sort') %>
                     <li class="splide__slide">
                         <div class="image-slider__slide" style="background-image: url({$Image.URL});">
                             <div class="image-slider__container $ContainerClass">

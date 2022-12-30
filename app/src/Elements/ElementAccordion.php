@@ -5,14 +5,9 @@ namespace Coxy\Website\Elements;
 use Coxy\Website\Models\AccordionItem;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\GridField\GridField;
-use SilverStripe\Forms\GridField\GridField_ActionMenu;
-use SilverStripe\Forms\GridField\GridFieldAddNewButton;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
-use SilverStripe\Forms\GridField\GridFieldDeleteAction;
-use SilverStripe\Forms\GridField\GridFieldDetailForm;
-use SilverStripe\Forms\GridField\GridFieldEditButton;
-use SilverStripe\Forms\GridField\GridFieldFilterHeader;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 /**
  * Class \Coxy\Website\Elements\ElementAccordion
@@ -46,6 +41,7 @@ class ElementAccordion extends BaseElement
         $content = HTMLEditorField::create('Content')->setRows(8);
 
         $config = GridFieldConfig_RecordEditor::create();
+        $config->addComponent(GridFieldOrderableRows::create('Sort'));
         $items = GridField::create('AccordionItems', 'Accordion Items', $this->AccordionItems(), $config);
 
         $fields->addFieldsToTab(
