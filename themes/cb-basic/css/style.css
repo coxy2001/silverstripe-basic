@@ -348,11 +348,13 @@ a:hover {
 .accordion-item__arrow {
   width: 1rem;
   height: auto;
+  fill: #fff;
+  transform: rotate(90deg);
   transform-origin: center;
-  transition-duration: 300ms;
+  transition: transform 300ms ease;
 }
 .accordion-item__header--expanded .accordion-item__arrow {
-  transform: rotate(180deg);
+  transform: rotate(270deg);
 }
 .accordion-item__collapse {
   overflow: hidden;

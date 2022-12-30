@@ -22,11 +22,13 @@
         &__arrow {
             width: 1rem;
             height: auto;
+            fill: $accordion-colour;
+            transform: rotate(90deg);
             transform-origin: center;
-            transition-duration: 300ms;
+            transition: transform 300ms ease;
 
             .accordion-item__header--expanded & {
-                transform: rotate(180deg);
+                transform: rotate(270deg);
             }
         }
 

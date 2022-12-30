@@ -27,8 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    new Splide(".splide--regular", {
-        type: "loop",
-        lazyLoad: "nearby",
-    }).mount();
+    $$(".splide--regular").forEach((element) => {
+        new Splide(element, {
+            type: "loop",
+            lazyLoad: "nearby",
+        }).mount();
+    });
 });
