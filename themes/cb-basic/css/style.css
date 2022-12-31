@@ -420,6 +420,39 @@ a:hover {
   }
 }
 
+.icons__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+.icons__grid-item {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  .icons__grid-item {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .icons__grid-item {
+    width: 33.33%;
+  }
+}
+@media (min-width: 1200px) {
+  .icons__grid-item {
+    width: 25%;
+  }
+}
+.icons__image {
+  width: 100%;
+}
+
 .image-content__row {
   display: flex;
   flex-direction: column;
