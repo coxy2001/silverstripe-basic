@@ -65,13 +65,10 @@ class ElementImageSlider extends BaseElement
         $bulkUpload->setUfSetup('setFolderName', ImageSlide::IMAGE_DIR);
         $slides = GridField::create('Slides', 'Slides', $this->Slides(), $config);
 
-        $fields->addFieldsToTab(
-            'Root.Main',
-            [
-                $slides,
-                $height,
-            ]
-        );
+        $fields->addFieldsToTab('Root.Main', [
+            $slides,
+            $height,
+        ]);
 
         return $fields;
     }

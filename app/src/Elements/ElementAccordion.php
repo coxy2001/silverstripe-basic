@@ -44,13 +44,10 @@ class ElementAccordion extends BaseElement
         $config->addComponent(GridFieldOrderableRows::create('Sort'));
         $items = GridField::create('AccordionItems', 'Accordion Items', $this->AccordionItems(), $config);
 
-        $fields->addFieldsToTab(
-            'Root.Main',
-            [
-                $content,
-                $items,
-            ]
-        );
+        $fields->addFieldsToTab('Root.Main', [
+            $content,
+            $items,
+        ]);
 
         return $fields;
     }

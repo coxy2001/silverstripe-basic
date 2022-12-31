@@ -80,16 +80,13 @@ class BaseElementExtension extends DataExtension
 
         $contained = CheckboxField::create('Contained', 'Block width contained?');
 
-        $fields->addFieldsToTab(
-            'Root.Settings',
-            [
-                $textColour,
-                $backgroundColour,
-                $paddingTop,
-                $paddingBottom,
-                $contained,
-            ]
-        );
+        $fields->addFieldsToTab('Root.Settings', [
+            $textColour,
+            $backgroundColour,
+            $paddingTop,
+            $paddingBottom,
+            $contained,
+        ]);
     }
 
     public function getElementClasses()

@@ -30,7 +30,9 @@ class ElementContentExtension extends DataExtension
             $content->setTitle('Left Content');
         }
 
-        $content2 = HTMLEditorField::create('HTML2', 'Right Content')->setRows(5);
-        $fields->insertAfter($content->getName(), $content2);
+        $fields->insertAfter(
+            $content->getName(),
+            HTMLEditorField::create('HTML2', 'Right Content')->setRows(5)
+        );
     }
 }

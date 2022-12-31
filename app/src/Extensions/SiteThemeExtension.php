@@ -113,59 +113,44 @@ class SiteThemeExtension extends DataExtension
             $fields->insertAfter(TabSet::create('ThemeOptions'), 'General');
         }
 
-        $fields->addFieldsToTab(
-            'Root.ThemeOptions.Body',
-            [
-                ColorField::create('ColourBody', 'Body Colour'),
-                ColorField::create('ColourBodyBg', 'Body Background Colour'),
-                ColorField::create('ColourPrimary', 'Primary Colour'),
-                ColorField::create('ColourSecondary', 'Secondary Colour'),
-                ColorField::create('ColourLink', 'Link Text Colour'),
-                ColorField::create('ColourBanner', 'Banner Text Colour')
-            ]
-        );
+        $fields->addFieldsToTab('Root.ThemeOptions.Body', [
+            ColorField::create('ColourBody', 'Body Colour'),
+            ColorField::create('ColourBodyBg', 'Body Background Colour'),
+            ColorField::create('ColourPrimary', 'Primary Colour'),
+            ColorField::create('ColourSecondary', 'Secondary Colour'),
+            ColorField::create('ColourLink', 'Link Text Colour'),
+            ColorField::create('ColourBanner', 'Banner Text Colour')
+        ]);
 
-        $fields->addFieldsToTab(
-            'Root.ThemeOptions.Headings',
-            [
-                ColorField::create('ColourH1', 'H1 Colour'),
-                TextField::create('WeightH1', 'H1 Weight'),
-                ColorField::create('ColourH2', 'H2 Colour'),
-                TextField::create('WeightH2', 'H2 Weight'),
-                ColorField::create('ColourH3', 'H3 Colour'),
-                TextField::create('WeightH3', 'H3 Weight'),
-                ColorField::create('ColourH4', 'H4 Colour'),
-                TextField::create('WeightH4', 'H4 Weight'),
-                ColorField::create('ColourH5', 'H5 Colour'),
-                TextField::create('WeightH5', 'H5 Weight'),
-                ColorField::create('ColourH6', 'H6 Colour'),
-                TextField::create('WeightH6', 'H6 Weight')
-            ]
-        );
+        $fields->addFieldsToTab('Root.ThemeOptions.Headings', [
+            ColorField::create('ColourH1', 'H1 Colour'),
+            TextField::create('WeightH1', 'H1 Weight'),
+            ColorField::create('ColourH2', 'H2 Colour'),
+            TextField::create('WeightH2', 'H2 Weight'),
+            ColorField::create('ColourH3', 'H3 Colour'),
+            TextField::create('WeightH3', 'H3 Weight'),
+            ColorField::create('ColourH4', 'H4 Colour'),
+            TextField::create('WeightH4', 'H4 Weight'),
+            ColorField::create('ColourH5', 'H5 Colour'),
+            TextField::create('WeightH5', 'H5 Weight'),
+            ColorField::create('ColourH6', 'H6 Colour'),
+            TextField::create('WeightH6', 'H6 Weight')
+        ]);
 
-        $fields->addFieldsToTab(
-            'Root.ThemeOptions.Header',
-            [
-                ColorField::create('ColourHeaderBg', 'Header Background Colour'),
-            ]
-        );
+        $fields->addFieldsToTab('Root.ThemeOptions.Header', [
+            ColorField::create('ColourHeaderBg', 'Header Background Colour'),
+        ]);
 
-        $fields->addFieldsToTab(
-            'Root.ThemeOptions.Navigation',
-            [
-                ColorField::create('ColourNavLink', 'Navigation Link Colour'),
-                ColorField::create('ColourNavCurrent', 'Navigation Current Colour'),
-                ColorField::create('ColourNavHover', 'Navigation Hover Colour')
-            ]
-        );
+        $fields->addFieldsToTab('Root.ThemeOptions.Navigation', [
+            ColorField::create('ColourNavLink', 'Navigation Link Colour'),
+            ColorField::create('ColourNavCurrent', 'Navigation Current Colour'),
+            ColorField::create('ColourNavHover', 'Navigation Hover Colour')
+        ]);
 
-        $fields->addFieldsToTab(
-            'Root.ThemeOptions.Footer',
-            [
-                ColorField::create('ColourFooterBg', 'Footer Background color'),
-                ColorField::create('ColourFooter', 'Footer Text color'),
-                ColorField::create('ColourFooterLink', 'Footer Link color')
-            ]
-        );
+        $fields->addFieldsToTab('Root.ThemeOptions.Footer', [
+            ColorField::create('ColourFooterBg', 'Footer Background color'),
+            ColorField::create('ColourFooter', 'Footer Text color'),
+            ColorField::create('ColourFooterLink', 'Footer Link color')
+        ]);
     }
 }

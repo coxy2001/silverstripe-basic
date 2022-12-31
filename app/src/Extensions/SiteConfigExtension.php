@@ -83,53 +83,41 @@ class SiteConfigExtension extends DataExtension
             ['ico', 'png']
         );
 
-        $fields->addFieldsToTab(
-            'Root.Main',
-            [
-                $logoField,
-                $faviconField
-            ]
-        );
+        $fields->addFieldsToTab('Root.Main', [
+            $logoField,
+            $faviconField
+        ]);
 
         // Company info and social media
         if (!$fields->fieldByName('Root.General')) {
             $fields->insertAfter(TabSet::create('General'), 'Main');
         }
 
-        $fields->addFieldsToTab(
-            'Root.General.Data',
-            [
-                TextField::create('CompanyName', 'Company Name'),
-                TextField::create('ContactEmail', 'Contact Email'),
-                TextField::create('ContactPhone', 'Contact Phone'),
-                TextField::create('ContactMobile', 'Contact Mobile'),
-                TextField::create('ContactFax', 'Contact Fax'),
-                TextareaField::create('OpenHours', 'Open Hours'),
-            ]
-        );
+        $fields->addFieldsToTab('Root.General.Data', [
+            TextField::create('CompanyName', 'Company Name'),
+            TextField::create('ContactEmail', 'Contact Email'),
+            TextField::create('ContactPhone', 'Contact Phone'),
+            TextField::create('ContactMobile', 'Contact Mobile'),
+            TextField::create('ContactFax', 'Contact Fax'),
+            TextareaField::create('OpenHours', 'Open Hours'),
+        ]);
 
-        $fields->addFieldsToTab(
-            'Root.General.Address',
-            [
-                TextField::create('CompanyAddress'),
-                TextField::create('CompanyAddress2', 'Company address 2'),
-                TextField::create('CompanyCity'),
-                TextField::create('CompanyState'),
-                TextField::create('CompanyPostalCode'),
-                TextField::create('CompanyCountry'),
-            ]
-        );
+        $fields->addFieldsToTab('Root.General.Address', [
+            TextField::create('CompanyAddress'),
+            TextField::create('CompanyAddress2', 'Company address 2'),
+            TextField::create('CompanyCity'),
+            TextField::create('CompanyState'),
+            TextField::create('CompanyPostalCode'),
+            TextField::create('CompanyCountry'),
+        ]);
 
-        $fields->addFieldsToTab(
-            'Root.General.SocialMedia',
-            [
-                TextField::create('FacebookUrl', 'Facebook Url'),
-                TextField::create('TwitterUrl', 'Twitter Url'),
-                TextField::create('InstagramUrl', 'Instagram Url'),
-                TextField::create('YouTubeUrl', 'YouTube Url'),
-                TextField::create('SpotifyUrl', 'Spotify Url'),
-            ]
-        );
+        $fields->addFieldsToTab('Root.General.SocialMedia', [
+            TextField::create('FacebookUrl', 'Facebook Url'),
+            TextField::create('TwitterUrl', 'Twitter Url'),
+            TextField::create('InstagramUrl', 'Instagram Url'),
+            TextField::create('YouTubeUrl', 'YouTube Url'),
+            TextField::create('SpotifyUrl', 'Spotify Url'),
+        ]);
     }
 
     public function getFullAddress()
