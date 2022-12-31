@@ -3,6 +3,8 @@
 namespace Coxy\Website\Models;
 
 use Coxy\Website\Elements\ElementIcons;
+use gorriecoe\Link\Models\Link;
+use gorriecoe\LinkField\LinkField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
@@ -14,8 +16,10 @@ use SilverStripe\ORM\DataObject;
  * @property string $Content
  * @property int $Sort
  * @property int $ImageID
+ * @property int $CTALinkID
  * @property int $ElementIconsID
  * @method \SilverStripe\Assets\Image Image()
+ * @method \gorriecoe\Link\Models\Link CTALink()
  * @method \Coxy\Website\Elements\ElementIcons ElementIcons()
  */
 class Icon extends DataObject
@@ -34,6 +38,7 @@ class Icon extends DataObject
 
     private static $has_one = [
         'Image' => Image::class,
+        'CTALink' => Link::class,
         'ElementIcons' => ElementIcons::class,
     ];
 
@@ -54,11 +59,12 @@ class Icon extends DataObject
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName(['ElementIconsID', 'Sort']);
+        $fields->removeByName(['ElementIconsID', 'CTALinkID', 'Sort']);
 
         $fields->addFieldsToTab('Root.Main', [
             HTMLEditorField::create('Content')->setRows(8),
             UploadField::create('Image')->setFolderName(self::IMAGE_DIR),
+            LinkField::create('CTALink', 'Link', $this),
         ]);
 
         return $fields;

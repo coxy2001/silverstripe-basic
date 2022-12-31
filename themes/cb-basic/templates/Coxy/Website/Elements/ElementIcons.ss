@@ -7,11 +7,17 @@
         <div class="icons__grid">
             <% loop $Icons.Sort('Sort') %>
                 <div class="icons__grid-item">
-                    <img class="icons__image" src="$Image.URL" alt="$Image.Title">
+                    <% if $Image %>
+                        <img class="icons__image" src="$Image.URL" alt="$Image.Title">
+                    <% end_if %>
                     $Content
-                    <a class="icons__link" href="$Link">$Link</a>
+                    $CTALink.setClass('icons__link btn btn--primary')
                 </div>
             <% end_loop %>
         </div>
     <% end_if %>
+
+    <div class="icons__block-link-holder">
+        $CTALink.setClass('icons__block-link btn btn--primary')
+    </div>
 </div>

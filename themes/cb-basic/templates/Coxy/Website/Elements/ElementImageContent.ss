@@ -7,8 +7,10 @@
         <div class="image-content__col">
             $Content
         </div>
-        <div class="image-content__col">
-            <img width="100%" src="$File.URL" alt="$File.Title">
-        </div>
+        <% if $File %>
+            <div class="image-content__col">
+                <img width="100%" src="$File.URL" alt="$File.Title">
+            </div>
+        <% end_if %>
     </div>
 </div>

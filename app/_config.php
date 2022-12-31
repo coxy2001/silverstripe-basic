@@ -23,7 +23,8 @@ if (Director::isDev()) {
 
 $formats = [
     [
-        'title' => 'Buttons', 'items' => [
+        'title' => 'Buttons',
+        'items' => [
             [
                 'title' => 'Button Primary',
                 'selector' => 'a',

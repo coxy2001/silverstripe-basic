@@ -21,6 +21,8 @@ class BannerExtension extends DataExtension
 
     public function updateCMSFields(FieldList $fields)
     {
+        $fields->removeByName('CallToActionLink');
+
         $fields->insertAfter(
             'Title',
             DropdownField::create(

@@ -452,6 +452,9 @@ a:hover {
 .icons__image {
   width: 100%;
 }
+.icons__block-link-holder {
+  text-align: center;
+}
 
 .image-content__row {
   display: flex;

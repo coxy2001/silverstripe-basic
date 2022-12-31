@@ -3,6 +3,8 @@
 namespace Coxy\Website\Models;
 
 use Coxy\Website\Elements\ElementImageSlider;
+use gorriecoe\Link\Models\Link;
+use gorriecoe\LinkField\LinkField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
@@ -15,8 +17,10 @@ use SilverStripe\ORM\DataObject;
  * @property string $Content
  * @property int $Sort
  * @property int $ImageID
+ * @property int $CTALinkID
  * @property int $SliderID
  * @method \SilverStripe\Assets\Image Image()
+ * @method \gorriecoe\Link\Models\Link CTALink()
  * @method \Coxy\Website\Elements\ElementImageSlider Slider()
  */
 class ImageSlide extends DataObject
@@ -36,6 +40,7 @@ class ImageSlide extends DataObject
 
     private static $has_one = [
         'Image' => Image::class,
+        'CTALink' => Link::class,
         'Slider' => ElementImageSlider::class,
     ];
 
@@ -57,11 +62,12 @@ class ImageSlide extends DataObject
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName(['SliderID', 'Sort']);
+        $fields->removeByName(['SliderID', 'Sort', 'CTALinkID']);
 
         $fields->addFieldsToTab('Root.Main', [
             HTMLEditorField::create('Content')->setRows(8),
             UploadField::create('Image')->setFolderName(self::IMAGE_DIR),
+            LinkField::create('CTALink', 'Link', $this),
         ]);
 
         return $fields;

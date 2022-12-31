@@ -17,6 +17,7 @@
                                         <h2 class="image-slider__title">$Title</h2>
                                     <% end_if %>
                                     $Content
+                                    $CTALink.setClass('image-slider__link btn btn--primary')
                                 </div>
                             </div>
                         </div>

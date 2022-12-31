@@ -4,6 +4,8 @@ namespace Coxy\Website\Elements;
 
 use Coxy\Website\Models\Icon;
 use DNADesign\Elemental\Models\BaseElement;
+use gorriecoe\Link\Models\Link;
+use gorriecoe\LinkField\LinkField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
@@ -11,6 +13,8 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 /**
  * Class \Coxy\Website\Elements\ElementIcons
  *
+ * @property int $CTALinkID
+ * @method \gorriecoe\Link\Models\Link CTALink()
  * @method \SilverStripe\ORM\DataList|\Coxy\Website\Models\Icon[] Icons()
  */
 class ElementIcons extends BaseElement
@@ -25,6 +29,10 @@ class ElementIcons extends BaseElement
 
     private static $db = [];
 
+    private static $has_one = [
+        'CTALink' => Link::class,
+    ];
+
     private static $has_many = [
         'Icons' => Icon::class,
     ];
@@ -36,7 +44,7 @@ class ElementIcons extends BaseElement
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName('Icons');
+        $fields->removeByName(['Icons', 'CTALinkID']);
 
         $config = GridFieldConfig_RecordEditor::create();
         $config->addComponents([
@@ -44,6 +52,7 @@ class ElementIcons extends BaseElement
         ]);
 
         $fields->addFieldsToTab('Root.Main', [
+            LinkField::create('CTALink', 'Link', $this),
             GridField::create('Icons', 'Icons', $this->Icons(), $config),
         ]);
 
