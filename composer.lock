@@ -533,12 +533,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/coxy2001/silverstripe-elements.git",
-                "reference": "35e55a4a1d654dc6866391a22971784cb8352329"
+                "reference": "6cf7a7b5b197a8afc8067bdc8fd9a5a788345083"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coxy2001/silverstripe-elements/zipball/35e55a4a1d654dc6866391a22971784cb8352329",
-                "reference": "35e55a4a1d654dc6866391a22971784cb8352329",
+                "url": "https://api.github.com/repos/coxy2001/silverstripe-elements/zipball/6cf7a7b5b197a8afc8067bdc8fd9a5a788345083",
+                "reference": "6cf7a7b5b197a8afc8067bdc8fd9a5a788345083",
                 "shasum": ""
             },
             "require": {
@@ -553,8 +553,8 @@
             "type": "silverstripe-vendormodule",
             "extra": {
                 "expose": [
-                    "css",
-                    "js"
+                    "client/css",
+                    "client/js"
                 ]
             },
             "autoload": {
@@ -589,7 +589,7 @@
                 "issues": "https://github.com/coxy2001/silverstripe-elements/issues",
                 "source": "https://github.com/coxy2001/silverstripe-elements/tree/master"
             },
-            "time": "2023-01-02T03:11:14+00:00"
+            "time": "2023-01-02T03:51:00+00:00"
         },
         {
             "name": "dnadesign/silverstripe-elemental",
