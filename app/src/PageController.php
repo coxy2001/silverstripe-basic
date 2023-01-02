@@ -33,10 +33,11 @@ class PageController extends ContentController
     {
         parent::init();
 
-        Requirements::themedCSS('css/splide-core.min');
+        Requirements::css('coxy2001/silverstripe-elements:client/css/splide-core.min.css');
         Requirements::themedCSS('css/style');
 
-        Requirements::themedJavascript('js/splide.min');
+        Requirements::javascript('coxy2001/silverstripe-elements:client/js/splide.min.js');
+        Requirements::javascript('coxy2001/silverstripe-elements:client/js/main.min.js');
         Requirements::themedJavascript('js/main');
     }
 }
