@@ -5,4 +5,4 @@ SilverStripe\Core\Manifest\ModuleManifest:
   project: app
 
 Silverstripe\Control\Director:
-  alternate_base_url: '`SS_BASE_URL`'
+  alternate_base_url: "`SS_BASE_URL`"
