@@ -9,7 +9,6 @@
         "silverstripe/login-forms": "~4.8.0@stable",
         "coxy2001/silverstripe-elements": "*",
         "coxy2001/silverstripe-theme-basic": "*",
-        "dnadesign/silverstripe-elemental-userforms": "3.x",
         "tractorcow/silverstripe-colorpicker": "^4.0"
     },
     "require-dev": {
