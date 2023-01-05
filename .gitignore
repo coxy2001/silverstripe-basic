@@ -3,5 +3,6 @@
 /public/_graphql/
 /.graphql-generated/
 /vendor/
+/themes/silverstripe-theme-basic
 *.log
 .env

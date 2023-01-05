@@ -3,5 +3,5 @@ Name: mytheme
 ---
 SilverStripe\View\SSViewer:
   themes:
-    - 'cb-basic'
-    - '$default'
+    - "silverstripe-theme-basic"
+    - "$default"

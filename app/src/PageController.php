@@ -37,7 +37,6 @@ class PageController extends ContentController
         Requirements::themedCSS('css/style');
 
         Requirements::javascript('coxy2001/silverstripe-elements:client/js/splide.min.js');
-        Requirements::javascript('coxy2001/silverstripe-elements:client/js/main.min.js');
         Requirements::themedJavascript('js/main');
     }
 }

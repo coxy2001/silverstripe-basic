@@ -8,6 +8,7 @@
         "silverstripe/recipe-cms": "~4.12.0@stable",
         "silverstripe/login-forms": "~4.8.0@stable",
         "coxy2001/silverstripe-elements": "*",
+        "coxy2001/silverstripe-theme-basic": "*",
         "dnadesign/silverstripe-elemental-userforms": "3.x",
         "tractorcow/silverstripe-colorpicker": "^4.0"
     },
@@ -15,6 +16,12 @@
         "phpunit/phpunit": "^9.5",
         "silverleague/ideannotator": "3.x-dev"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/coxy2001/silverstripe-theme-basic"
+        }
+    ],
     "extra": {
         "project-files": [
             "app/_config/*",
