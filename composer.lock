@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3977e40c92eef341c0dc3fca3fc287c5",
+    "content-hash": "4b178815cca4ded1405890658aa98f42",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -221,16 +221,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.3.4",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "69098eca243998b53eed7a48d82dedd28b447cd5"
+                "reference": "74780ccf8c19d6acb8d65c5f39cd72110e132bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/69098eca243998b53eed7a48d82dedd28b447cd5",
-                "reference": "69098eca243998b53eed7a48d82dedd28b447cd5",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/74780ccf8c19d6acb8d65c5f39cd72110e132bbd",
+                "reference": "74780ccf8c19d6acb8d65c5f39cd72110e132bbd",
                 "shasum": ""
             },
             "require": {
@@ -277,7 +277,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.3.4"
+                "source": "https://github.com/composer/ca-bundle/tree/1.3.5"
             },
             "funding": [
                 {
@@ -293,7 +293,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-10-12T12:08:29+00:00"
+            "time": "2023-01-11T08:27:00+00:00"
         },
         {
             "name": "composer/installers",
@@ -533,17 +533,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/coxy2001/silverstripe-elements.git",
-                "reference": "6cf7a7b5b197a8afc8067bdc8fd9a5a788345083"
+                "reference": "9af9f3fca12cfdb68e6412a71d27c6f4f0ab8f0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coxy2001/silverstripe-elements/zipball/6cf7a7b5b197a8afc8067bdc8fd9a5a788345083",
-                "reference": "6cf7a7b5b197a8afc8067bdc8fd9a5a788345083",
+                "url": "https://api.github.com/repos/coxy2001/silverstripe-elements/zipball/9af9f3fca12cfdb68e6412a71d27c6f4f0ab8f0a",
+                "reference": "9af9f3fca12cfdb68e6412a71d27c6f4f0ab8f0a",
                 "shasum": ""
             },
             "require": {
                 "bummzack/sortablefile": "^2.0",
                 "colymba/gridfield-bulk-editing-tools": "^3.0",
+                "dnadesign/silverstripe-elemental-userforms": "3.x",
                 "gorriecoe/silverstripe-linkfield": "^1.0",
                 "php": "^8.0",
                 "silverstripe/elemental-bannerblock": "^2.0",
@@ -569,7 +570,8 @@
             "authors": [
                 {
                     "name": "Nathan Cox",
-                    "email": "nathan.cox.cb@gmail.com"
+                    "email": "nathan.cox.cb@gmail.com",
+                    "homepage": "http://www.coxy.tech"
                 }
             ],
             "description": "A set of SilverStripe elements",
@@ -589,7 +591,7 @@
                 "issues": "https://github.com/coxy2001/silverstripe-elements/issues",
                 "source": "https://github.com/coxy2001/silverstripe-elements/tree/master"
             },
-            "time": "2023-01-02T03:51:00+00:00"
+            "time": "2023-01-14T04:01:13+00:00"
         },
         {
             "name": "coxy2001/silverstripe-theme-basic",
@@ -597,12 +599,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/coxy2001/silverstripe-theme-basic.git",
-                "reference": "6b63bf26cb195dd4448b4ba1e9f543a7688de172"
+                "reference": "f7e787092da97baf157c8f95dcce283b610c8e22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coxy2001/silverstripe-theme-basic/zipball/6b63bf26cb195dd4448b4ba1e9f543a7688de172",
-                "reference": "6b63bf26cb195dd4448b4ba1e9f543a7688de172",
+                "url": "https://api.github.com/repos/coxy2001/silverstripe-theme-basic/zipball/f7e787092da97baf157c8f95dcce283b610c8e22",
+                "reference": "f7e787092da97baf157c8f95dcce283b610c8e22",
                 "shasum": ""
             },
             "require": {
@@ -636,7 +638,7 @@
                 "source": "https://github.com/coxy2001/silverstripe-theme-basic/tree/master",
                 "issues": "https://github.com/coxy2001/silverstripe-theme-basic/issues"
             },
-            "time": "2023-01-05T04:18:59+00:00"
+            "time": "2023-01-14T04:09:08+00:00"
         },
         {
             "name": "dnadesign/silverstripe-elemental",
@@ -1049,16 +1051,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.13.3",
+            "version": "8.13.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "f40e7696c207ec37465a9e841dd9d3b0a8e9c781"
+                "reference": "b2cebcf2b8d3e194b692d8bae2a5b79f5366674c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/f40e7696c207ec37465a9e841dd9d3b0a8e9c781",
-                "reference": "f40e7696c207ec37465a9e841dd9d3b0a8e9c781",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/b2cebcf2b8d3e194b692d8bae2a5b79f5366674c",
+                "reference": "b2cebcf2b8d3e194b692d8bae2a5b79f5366674c",
                 "shasum": ""
             },
             "require": {
@@ -1117,7 +1119,7 @@
                 "issues": "https://github.com/giggsey/libphonenumber-for-php/issues",
                 "source": "https://github.com/giggsey/libphonenumber-for-php"
             },
-            "time": "2022-12-22T08:56:17+00:00"
+            "time": "2023-01-09T09:44:18+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -2855,16 +2857,16 @@
         },
         {
             "name": "silverstripe/admin",
-            "version": "1.12.0",
+            "version": "1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-admin.git",
-                "reference": "7b430d4171da9608918190109b85e15260e0d626"
+                "reference": "5497d5b63c8ca04c56a4dd501f4bec7bef79de24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-admin/zipball/7b430d4171da9608918190109b85e15260e0d626",
-                "reference": "7b430d4171da9608918190109b85e15260e0d626",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-admin/zipball/5497d5b63c8ca04c56a4dd501f4bec7bef79de24",
+                "reference": "5497d5b63c8ca04c56a4dd501f4bec7bef79de24",
                 "shasum": ""
             },
             "require": {
@@ -2920,9 +2922,9 @@
             ],
             "support": {
                 "issues": "https://github.com/silverstripe/silverstripe-admin/issues",
-                "source": "https://github.com/silverstripe/silverstripe-admin/tree/1.12.0"
+                "source": "https://github.com/silverstripe/silverstripe-admin/tree/1.12.1"
             },
-            "time": "2022-12-13T02:29:27+00:00"
+            "time": "2023-01-12T04:08:15+00:00"
         },
         {
             "name": "silverstripe/asset-admin",
@@ -3442,16 +3444,16 @@
         },
         {
             "name": "silverstripe/framework",
-            "version": "4.12.1",
+            "version": "4.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "3564f98c9c1aed0e6fdcd12068cbd04017efd895"
+                "reference": "62f71a321ddda88b4306a985bd82ab3eb19766ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/3564f98c9c1aed0e6fdcd12068cbd04017efd895",
-                "reference": "3564f98c9c1aed0e6fdcd12068cbd04017efd895",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/62f71a321ddda88b4306a985bd82ab3eb19766ea",
+                "reference": "62f71a321ddda88b4306a985bd82ab3eb19766ea",
                 "shasum": ""
             },
             "require": {
@@ -3567,9 +3569,9 @@
             ],
             "support": {
                 "issues": "https://github.com/silverstripe/silverstripe-framework/issues",
-                "source": "https://github.com/silverstripe/silverstripe-framework/tree/4.12.1"
+                "source": "https://github.com/silverstripe/silverstripe-framework/tree/4.12.2"
             },
-            "time": "2022-12-19T22:38:12+00:00"
+            "time": "2023-01-08T21:47:17+00:00"
         },
         {
             "name": "silverstripe/graphql",
@@ -6518,16 +6520,16 @@
         },
         {
             "name": "webonyx/graphql-php",
-            "version": "v14.11.8",
+            "version": "v14.11.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webonyx/graphql-php.git",
-                "reference": "04a48693acd785330eefd3b0e4fa67df8dfee7c3"
+                "reference": "ff91c9f3cf241db702e30b2c42bcc0920e70ac70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/04a48693acd785330eefd3b0e4fa67df8dfee7c3",
-                "reference": "04a48693acd785330eefd3b0e4fa67df8dfee7c3",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/ff91c9f3cf241db702e30b2c42bcc0920e70ac70",
+                "reference": "ff91c9f3cf241db702e30b2c42bcc0920e70ac70",
                 "shasum": ""
             },
             "require": {
@@ -6572,7 +6574,7 @@
             ],
             "support": {
                 "issues": "https://github.com/webonyx/graphql-php/issues",
-                "source": "https://github.com/webonyx/graphql-php/tree/v14.11.8"
+                "source": "https://github.com/webonyx/graphql-php/tree/v14.11.9"
             },
             "funding": [
                 {
@@ -6580,7 +6582,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-09-21T15:35:03+00:00"
+            "time": "2023-01-06T12:12:50+00:00"
         }
     ],
     "packages-dev": [
