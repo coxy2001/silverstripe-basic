@@ -1,7 +1,6 @@
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Coxy\Website\Extensions\SiteConfigExtension
-    - Coxy\Website\Extensions\SiteThemeExtension
 
 Page:
   extensions:

@@ -29,6 +29,7 @@ use SilverStripe\ORM\FieldType\DBField;
  * @property string $FacebookUrl
  * @property string $TwitterUrl
  * @property string $InstagramUrl
+ * @property string $LinkedinUrl
  * @property string $YouTubeUrl
  * @property string $SpotifyUrl
  * @property int $LogoID
@@ -48,18 +49,19 @@ class SiteConfigExtension extends DataExtension
         'ContactFax' => 'Varchar',
         'OpenHours' => 'Text',
 
-        'CompanyAddress' => 'Varchar(255)',
-        'CompanyAddress2' => 'Varchar(255)',
+        'CompanyAddress' => 'Varchar',
+        'CompanyAddress2' => 'Varchar',
         'CompanyCity' => 'Varchar(64)',
         'CompanyState' => 'Varchar(64)',
         'CompanyPostalCode' => 'Varchar(10)',
         'CompanyCountry' => 'Varchar(64)',
 
-        'FacebookUrl' => 'Varchar(255)',
-        'TwitterUrl' => 'Varchar(255)',
-        'InstagramUrl' => 'Varchar(255)',
-        'YouTubeUrl' => 'Varchar(255)',
-        'SpotifyUrl' => 'Varchar(255)'
+        'FacebookUrl' => 'Varchar',
+        'TwitterUrl' => 'Varchar',
+        'InstagramUrl' => 'Varchar',
+        'LinkedinUrl' => 'Varchar',
+        'YouTubeUrl' => 'Varchar',
+        'SpotifyUrl' => 'Varchar',
     ];
 
     private static $has_one = [
@@ -67,7 +69,10 @@ class SiteConfigExtension extends DataExtension
         'Icon' => Image::class
     ];
 
-    private static $owns = ['Logo', 'Icon'];
+    private static $owns = [
+        'Logo',
+        'Icon',
+    ];
 
     public function updateCMSFields(FieldList $fields)
     {
@@ -103,20 +108,21 @@ class SiteConfigExtension extends DataExtension
         ]);
 
         $fields->addFieldsToTab('Root.General.Address', [
-            TextField::create('CompanyAddress'),
-            TextField::create('CompanyAddress2', 'Company address 2'),
-            TextField::create('CompanyCity'),
-            TextField::create('CompanyState'),
-            TextField::create('CompanyPostalCode'),
-            TextField::create('CompanyCountry'),
+            TextField::create('CompanyAddress', 'Company Address'),
+            TextField::create('CompanyAddress2', 'Company Address 2'),
+            TextField::create('CompanyCity', 'Company City'),
+            TextField::create('CompanyState', 'Company State'),
+            TextField::create('CompanyPostalCode', 'Company Postal Code'),
+            TextField::create('CompanyCountry', 'Company Country'),
         ]);
 
         $fields->addFieldsToTab('Root.General.SocialMedia', [
-            TextField::create('FacebookUrl', 'Facebook Url'),
-            TextField::create('TwitterUrl', 'Twitter Url'),
-            TextField::create('InstagramUrl', 'Instagram Url'),
-            TextField::create('YouTubeUrl', 'YouTube Url'),
-            TextField::create('SpotifyUrl', 'Spotify Url'),
+            TextField::create('FacebookUrl', 'Facebook URL'),
+            TextField::create('TwitterUrl', 'Twitter URL'),
+            TextField::create('InstagramUrl', 'Instagram URL'),
+            TextField::create('LinkedinUrl', 'Linkedin URL'),
+            TextField::create('YouTubeUrl', 'YouTube URL'),
+            TextField::create('SpotifyUrl', 'Spotify URL'),
         ]);
     }
 
@@ -145,7 +151,6 @@ class SiteConfigExtension extends DataExtension
         ];
 
         $results = implode('<br/>', array_filter($parts));
-
         return DBField::create_field('HTMLText', $results);
     }
 }
